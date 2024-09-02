@@ -1,0 +1,57 @@
+<style>
+ #news .page { display:     none;}
+ #news .active { display: block;}
+ #news .active-link { background-color: #868686;  color: #fff;}
+  
+
+</style>
+
+<!--   news-pan-->
+
+<section id="news"   style="margin-top: 20px;">
+    <div class="container" class="news"> 
+
+        {news}
+
+    </div> 
+</section>
+
+  <!-- fin  news-pan-->
+
+  <script>
+   function first() {
+   
+     
+      affMyPage(1);
+
+
+   }  
+
+   function last() {
+   
+   var last =   $(".page-item ").length; 
+   var page = parseInt(last)-2
+     
+   if (page) affMyPage(page);
+
+
+  }  
+
+   affMyPage = function(p) {
+
+     $(".page").removeClass("active");
+     $("#page-"+p).addClass("active");
+     $(".page-link" ).removeClass("active-link");
+     $("#link-"+p).addClass("active-link");
+     $(".page-link" ).parent().removeClass("disabled");
+     $("#link-"+p).parent().addClass("disabled");
+
+
+    if (p!=1) $(".first").removeClass("disabled"); else $(".first").addClass("disabled");
+
+
+
+
+
+   }
+  </script>

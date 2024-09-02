@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<data>
+
+	<module  value="articles" >articles</module>
+	<module  value="news" >news</module>
+	<module  value="news-carous" >Caroussel des news</module>
+	
+	<module  value="avis" >avis</module>
+	<module  value="chat" >chat</module>
+	<module  value="currency" >currency</module>
+	<module  value="currency2" >Currency 2.2</module>
+	<module  value="main-menu" >main-menu</module>
+	<module  value="menu-simple" >menu-simple</module>
+	
+	<module  value="menu-saut" >menu-saut</module>
+	<module  value="menu-smart" >menu-smart</module>
+	<module  value="menu-spec" >menu-spec</module>
+	<module  value="mi-slider" >mi-slider</module>
+	<module  value="my-slider" >my-slider</module>
+	
+	
+	<module  value="my-html" >my-html</module>
+	<module  value="module_news" >news avec Bouton</module>
+	<module  value="outils" >outils</module>
+	<module  value="salati" >salati</module>
+	<module  value="y-meteo" >y-meteo</module> 
+	<module  value="my-video" >my-video</module> 
+	<module  value="switch-lg" >switch-lg</module> 
+	<module  value="sondage" >sondage</module> 
+	<module  value="menu-warda" >menu-warda</module> 
+	<module  value="element-warda" >element-warda</module> 
+	<module  value="menu-liste" >Menu Liste </module>
+	<module  value="menu-pico" >Menu petites icones </module>
+	<module  value="simulateur" > Simulateur </module>
+	<module  value="menu-header">Menu Header </module>
+	<module  value="animateur" >Animateur</module>
+	<module  value="mini-slider" >mini-slider</module>
+	<module  value="simulateur3" >Simulateur Compte</module>
+	
+	<module  value="news-letter" >Inscription Newsletter</module>
+	<module  value="prod-carous" >Caroussel Produit</module>
+	
+	
+	<module  value="lien-cote" >Menu Lien coté</module>  
+	<module  value="slide-video" >Slide Video</module>  
+	
+	<module  value="cookies" >Gestion des cookies</module>  
+	
+</data>

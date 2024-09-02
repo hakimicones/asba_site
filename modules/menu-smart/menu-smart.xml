@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+ 
+	<field  name="id_menu" type="sql" label="Menu" description="libelle"   class="form-control"   readonly="id" folder="SELECT * FROM `is_menu`" />
+	<field  name="sens" type="radio"  label="Direction" description="left;right" folder="Gauche;Droite"  class="input-group" readonly="false"  />
+   
+   
+</param>
+
+
+ 

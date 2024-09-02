@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+	 <field  name="titre1" type="text" label="Titre Bouton 1" description=""  readonly="false"      class="form-control"     /> 
+	 <field  name="lien1" type="text"   label="Lien Bouton 1" description=""  readonly="false"   class="form-control"     />
+	  
+	<field  name="icon1" type="selctXML"    label="Icones"     description="icones"  onclik="affIcone()"   class="form-control" folder="xml/icones.xml"  />
+ 
+  	<field  name="titre2" type="text" label="Titre Bouton 3" description=""  readonly="false"   class="form-control"     />
+ 	<field  name="lien2" type="text"   label="Lien Bouton 2" description=""  readonly="false"   class="form-control"     />
+	<field  name="icon2" type="selctXML"    label="Icones"     description="icones"  onclik="affIcone()"   class="form-control" folder="xml/icones.xml"  />
+
+	 <field  name="titre3" type="text" label="Titre Bouton 2" description=""  readonly="false"   class="form-control"     /> 
+	 <field  name="lien3" type="text"   label="Lien Bouton 3" description=""  readonly="false"   class="form-control"     />
+	 <field  name="icon3" type="selctXML"    label="Icones"     description="icones"  onclik="affIcone()"   class="form-control" folder="xml/icones.xml"  />
+	 
+</param>
+
+
+ 

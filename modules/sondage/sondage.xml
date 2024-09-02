@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+   <field  name="id_sondage" type="sql" label="Question"  description="question" id="id_appli" class="form-control"   readonly="id"  folder="SELECT * FROM is_sondage_questions" />
+   
+</param>
+
+
+ 

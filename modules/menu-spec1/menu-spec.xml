@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+     <field  name="id_cat" type="selctXML" label="Type" description="menu"  class="form-control" folder="../modules/menu-spec/menu.xml"  />
+   
+</param>
+
+
+ 

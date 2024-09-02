@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+   <field  name="id_menu" type="sql" label="Menu" description="libelle"   class="form-control"   readonly="id" folder="SELECT * FROM `is_menu`" />
+   <field  name="class" type="text" label="Class" description=""   class="form-control"   readonly="false" />
+   <field  name="titre" type="text" label="Titre" description=""   class="form-control"   readonly="false" />
+ 
+  <field  name="lg" type="langue" label="Langue" description=""   class="form-control"    readonly="false" /> 
+  <field  name="num" type="number" label="Numero" description=""   class="form-control"    readonly="false" />  
+  <field  name="positions1" type="text" label="Positions X (Séparés par ; ) " description=""   class="form-control"    readonly="false" /> 
+  <field  name="positions2" type="text" label="Positions Y (Séparés par ; ) " description=""   class="form-control"    readonly="false" />
+  <field  name="l1" type="number" label="Largeur" description=""   class="form-control"    readonly="false" />
+  <field  name="h1" type="number" label="Hauteur" description=""   class="form-control"    readonly="false" />
+  <field  name="fz" type="number" label="Taille Police" description=""   class="form-control"    readonly="false" />
+   
+</param>
+
+
+ 

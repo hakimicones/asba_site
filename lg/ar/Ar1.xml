@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+  <variables>
+	<var name="{Support Client}" trad="تواصل" />
+	<var name="{avis}" trad=" رأيكم يهمنا " />
+	<var name="{news}" trad="آخر الأخبار" />
+	<var name="{nom}" trad="ادخل اسمك" />
+	<var name="{nomprenom}" trad="اسمك و لقبك" />
+	<var name="{adresse}" trad="العنوان" />
+	<var name="{ville}" trad="المدينة" />
+	<var name="{wilaya}" trad="الولاية" />
+	<var name="{tel}" trad="الهاتف" />
+	<var name="{fax}" trad="الفاكس" />
+	<var name="{mob}" trad="النقال" />
+	<var name="{nele}" trad="تاريخ الميلاد" />
+	<var name="{lieu}" trad="مكان الازدياد" />
+	<var name="{sex}" trad="انا" />
+	<var name="{situation}" trad="الحالة المدنية" />
+ 	<var name="{postuler}" trad="ترشح" />
+ 
+	<var name="{dern_poste}" trad="أخر منصب" />
+	<var name="{ce_que_tu_veut}" trad="ما تريد قوله" />
+	<var name="{formation}" trad="التكوين" />
+	<var name="{experience}" trad="التجربة" />
+	<var name="{autres experience}" trad="تجربة أخرى" />
+	<var name="{autres formations}" trad="تكوينات أخرى" />
+	
+	<var name="{universitaire}" trad="جامعي" />
+	
+	<var name="{avec experience}" trad="ذو خبرة" />
+	 
+	<var name="{directeur}" trad=" مدير الفرع" />
+	<var name="{adjoint}" trad=" نائب مدير الفرع" />
+	
+	<var name="{email}" trad="البريد  الالكتروني" />
+	<var name="{votreemail}" trad="بريدك الالكتروني" />
+	<var name="{sujet}" trad="الموضوع" />
+	<var name="{message}" trad="الرسالة" /> 
+	<var name="{send}" trad="ابعث" />
+	<var name="{close}" trad="اغلق" />
+	<var name="{effacer}" trad="مسح" />
+	<var name="{message2}" trad="(+213) (0) 23 304 580/304 584/661487016" />
+	<var name="{message_chat_1}" trad="" />
+	<var name="{message_chat_2}" trad="" />
+	<var name="{message_chat_3}" trad="" />
+	<var name="{horraire priere}" trad="أوقات الصلاة" />
+	<var name="{zakat}" trad="احسب زكاتك" />
+	<var name="{simul}" trad="احسب قسطك" />
+	<var name="{meteo}" trad="الطقس" />
+	<var name="{convertion}" trad="محول العملات" />
+	<var name="{isha}" trad="العشاء" />
+	<var name="{maghreb}" trad="المغرب" />
+	<var name="{asr}" trad="العصر" />
+	<var name="{dhohr}" trad="الظهر" />
+	<var name="{fedjr}" trad="الفجر" />
+	<var name="{comptant}" trad="نقداً" />
+	<var name="{or}" trad="ذهب" />
+	<var name="{montant}" trad="المبلغ" />
+	<var name="{poids en carat}" trad="الوزن عيار (غ)" />
+	<var name="{calcul}" trad=" حساب الزكاة" />
+	<var name="{message5}" trad="عذراً, القيمة المدخلة اقل من قيمة النصاب لهذا اليوم" />
+	<var name="{facilites}" trad="البيع بالتقسيط" />
+	<var name="{dar salam}" trad="دار السلام" />
+	<var name="{du dinar}" trad="تحويل من الدينار الجزائري الى العملة الصعبة" />
+	<var name="{vers dinar}" trad="تحويل من العملة الصعبة الى الدينار الجزائري" />
+	<var name="{montant transfer}" trad="المبلغ المراد تحويله" />
+	<var name="{valeur zakat}" trad="قيمة الزكاة" />
+	<var name="{message6}" trad="تنويه: جميع الأرقام والنسب المئوية مذكورة للاسترشاد فقط" />
+	<var name="{humidite}" trad="رطوبة" />
+	<var name="{vent}" trad="رياح" />
+	<var name="|Rain|" trad="ماطر" />
+	<var name="|Showers|" trad="ماطر" />
+	<var name="{prix bien}" trad="سعر العقار" /> 
+	<var name="{prix auto}" trad="سعر الشراء" />
+	<var name="{marge}" trad="هامش ربح" />
+	<var name="{financement equipement}" trad="شراء المعدات" />
+	<var name="{financement vehicule}" trad="شراء سيارة" /> 
+	<var name="{salaire emprunteur}" trad="الراتب" />
+	<var name="{salaire co-emprunteur}" trad="راتب الشريك" />
+	<var name="{salaire Cumule}" trad="الراتب التراكمي" />	 
+	<var name="{capacite d endettement}" trad=" القدرة على الاستدانة" />
+	<var name="{Nombre d echeances}" trad="مدة التمويل (حرك الدائرة الزرقاء)" />
+	<var name="{Nombre d echeances2}" trad="مدة التمويل (حرك الدائرة الزرقاء)" />	
+	<var name="{montant echeance}" trad="القسط الشهري" />	
+	<var name="{participation Client}" trad="هامش ضمان الجدية" />
+	<var name="{message7}" trad=" تعطى هذه المحاكاة بصفة ارشادية " /> 
+        <var name="{financement dar al salam epargnant}" trad="عميل حامل  لبطاقة او دفتر توفير" />
+	<var name="{financement dar al salam epargnant dom }" trad="عميل موطن لدى مصرف السلام" />
+	<var name="{financement dar al salam non epargnant}" trad="عميل غير موطن لدى مصرف السلام" />
+	<var name="{montant a financer }" trad="التمويل" />	
+	<var name="{recherche}" trad="بحث" />	
+	<var name="{add_cv_success}" trad="لقد تم بعث طلب الترشح" />
+	<var name="{nous_contacterons}" trad="سوف نتصل بك لاحقا" />
+	<var name="{merci}" trad="شكرا لك" /> 
+	<var name="{desole}" trad="عذرا" /> 
+	<var name="{marie}" trad="متزوج" /> 
+	<var name="{marie_enfant}" trad="متزوج و عندي أطفال" /> 
+	<var name="{celibataire}" trad="غير متزوج" /> 
+	<var name="{divorce}" trad="مطلق" /> 
+	<var name="{veuf}" trad="أرمل" /> 
+	<var name="{homme}" trad="ذكر" /> 
+	<var name="{femme}" trad="أنثى" /> 
+	
+	<var name="{lire plus}" trad="اقرء المزيد" />	
+	<var name="{reduire}" trad="تقليص" /> 
+	<var name="{reponse}" trad="الجواب" /> 
+	
+	<var name="{description}" trad="الوصف" />
+	<var name="{avantages}" trad="مزايا " />
+	<var name="{conditions}" trad="شروط الأهلية" />
+	<var name="{documents}" trad="الوثائق المطلوبة" />
+	<var name="{formule}" trad="الصيغة الشرعية" />
+	<var name="{tax}" trad="الرسوم و العملات" />
+    <var name="{liens_similaire}" trad="روابط ذات صلة" />
+	<var name="{partager}" trad="مشاركة" />
+	<var name="{imprimer}" trad="طباعة" />
+	<var name="{dimunier texte}" trad="تكبير النص" />
+	<var name="{agrandir texte}" trad="تقليص النص" />
+	<var name="{achat}" trad="شراء" />
+	<var name="{vente}" trad="بيع" />
+	<var name="{autresim}" trad="محاكات أخرى" />
+        <var name="{message8}" trad="" /> 
+     
+	<var name="{agences}" trad="الفروع" /> 
+	<var name="{cvtech}" trad="توظيف" />  
+	<var name="{produits}" trad="الخدمات" /> 
+	<var name="{da}" trad="دينار جزائري" /> 
+	<var name="{taux change}" trad="سعر الصرف" />
+	<var name="{convert}" trad="تحويل" />
+	
+	
+	<var name="{rejoinez la news letter}" trad="انضم إلى النشرةالالكترونية  " /> 
+    
+        <var name="{categorie}" trad="اختر التبويب" />
+	<var name="{fatawa}" trad="فتاوي الهيئة" />
+	
+	<var name="{num_fatwa}" trad="اجتماع رقم: " />
+	 
+	<var name="{date_fatwa}" trad=" بتاريخ : " />
+	
+	
+ </variables>

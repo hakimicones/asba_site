@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+      
+	   <field  name="images" type="file"    label="Images" description="multi"   class="form-control"   readonly="false"  folder="images/flex-slider" />
+       <field  name="bg"     type="file"    label="Images" description=""   class="form-control"   readonly="false"  folder="images/flex-slider" />
+</param>
+
+
+ 

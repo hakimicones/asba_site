@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<data>
+	<positions>
+
+		<position value="menu" >menu</position>
+		<position value="bas2" >bas2</position>
+		<position value="bottom1" >bottom1</position>
+		<position value="bottom2" >bottom2</position>
+		<position value="footer1" >footer1</position>
+		<position value="footer2" >footer2</position>
+		<position value="footer3" >footer3</position>
+		<position value="footer4" >footer4</position>
+		<position value="footer5" >footer5</position>
+		<position value="menu1" >menu1</position>
+		<position value="menu2" >menu2</position>
+		<position value="position-1" >position-1</position>
+		<position value="position-2" >position-2</position>		
+		<position value="position-3" >position-3</position>
+		<position value="position-4" >position-4</position>
+		<position value="position-5" >position-5</position>
+		<position value="position-6" >position-6</position>
+		<position value="position-7" >position-7</position>
+		<position value="position-8" >position-8</position>
+		<position value="position-9" >position-9</position>
+		<position value="position-10" >position-10</position>
+		<position value="position-11" >position-11</position>
+		<position value="position-12" >position-12</position>
+		<position value="position-13" >position-13</position>
+		<position value="position-14" >position-14</position>
+		<position value="position-15" >position-15</position>
+		<position value="slider" >slider</position>
+		<position value="top1" >top1</position>
+		<position value="header1" >header1</position>
+		<position value="header2" >header2</position>
+		<position value="volet1" >volet1</position>
+		<position value="volet2" >volet2</position>
+		<position value="volet3" >volet3</position>
+		<position value="volet4" >volet4</position>
+		<position value="page-1" >Page 1</position>
+		<position value="page-2" >Page 2</position>		
+		<position value="page-3" >Page 3</position>
+		<position value="page-4" >Page 4</position>
+		<position value="page-5" >Page 5</position>
+		<position value="page-6" >Page 6</position>
+		<position value="page-7" >Page 7</position>
+		<position value="page-8" >Page 8</position>
+		<position value="page-9" >Page 9</position>
+		<position value="page-10" >Page 10</position>
+		<position value="page-11" >Page 11</position>
+		
+		<position value="page-12" >Page 12</position>
+		<position value="page-13" >Page 13</position>
+		<position value="page-14" >Page 14</position>
+ 
+		<position value="popup" >Pop up</position>
+			
+    </positions>
+</data>

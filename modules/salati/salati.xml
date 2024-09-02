@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+  <field  name="id_menu" type="selctXML" label="Type" description="menu"  class="form-control" folder="xml/menu.xml"  />
+  <field  name="lg" type="langue" label="Langue" description=""   class="form-control"    readonly="false" /> 
+   
+</param>
+
+
+ 

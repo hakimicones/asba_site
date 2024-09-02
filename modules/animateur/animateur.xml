@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+    
+   <field  name="video1" type="file"    label="Fichier Video 1" description=""   class="form-control" folder = "video"  readonly="false"   />
+   <field  name="video2" type="file"    label="Fichier Video 2" description=""   class="form-control" folder = "video"  readonly="false"   />
+   <field  name="image" type="file"    label="Fichier Video 2" description=""   class="form-control" folder = "images"  readonly="false"   />
+   
+   <field  name="classe" type="text"    label="Classe CSS" description="libelle"   class="form-control"   readonly="false"   />
+   <field  name="hauteur" type="number"    label="Hauteur" description="libelle"   class="form-control"   readonly="false"   />
+   <field  name="hauteur2" type="number"    label="Hauteur Mozila" description="libelle"   class="form-control"   readonly="false"   />
+   <field  name="largeur" type="number"    label="Largeur" description="libelle"   class="form-control"   readonly="false"   />
+   <field  name="freq" type="number"    label="Fréquence" description=""   class="form-control"   readonly="false"   />
+   <field  name="position_x" type="number"    label="Position X" description="libelle"   class="form-control"   readonly="false"   />
+   <field  name="position_y" type="number"    label="Position Y" description="libelle"   class="form-control"   readonly="false"   />
+   <field  name="sens" type="radio"    label="Direction" description="left;right" folder="Gauche;Droite"  class="input-group"   readonly="false"   />
+   
+ 
+ 
+   
+</param>
+
+
+ 

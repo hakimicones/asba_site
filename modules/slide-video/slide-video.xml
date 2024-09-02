@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+    <field  name="video1" type="text"    label="Video 1" description="Video"   class="form-control"   readonly="false"   />
+    <field  name="article1" type="sql"   label="Article 1" description="libelle"   class="form-control"   readonly="id" folder="SELECT * FROM `is_contenu`"   />
+    <field  name="image1" type="image"    label="Image 1" description="image"   class="form-control"   readonly="false"  folder="images"  />
+   
+    <field  name="video2" type="text"    label="Video 2" description="Video"   class="form-control"   readonly="false"   />
+    <field  name="article2" type="sql"   label="Article 2" description="libelle"   class="form-control"   readonly="id" folder="SELECT * FROM `is_contenu`"   />
+    <field  name="image2" type="image"    label="Image 2" description="image"   class="form-control"   readonly="false"   folder="images" />
+
+    <field  name="video3" type="text"    label="Video 3" description="Video"   class="form-control"   readonly="false"   />
+   <field  name="article3" type="sql"    label="Article 3" description="libelle"   class="form-control"   readonly="id" folder="SELECT * FROM `is_contenu`"   />
+   <field  name="image3" type="image"    label="Image 3" description="image"   class="form-control"   readonly="false"   folder="images" />
+
+    <field  name="video4" type="text"    label="Video 4" description="Video"   class="form-control"   readonly="false"   />
+    <field  name="article4" type="sql"   label="Article 4" description="libelle"   class="form-control"   readonly="id" folder="SELECT * FROM `is_contenu`"   />
+    <field  name="image4" type="image"    label="Image 4" description="image"   class="form-control"   readonly="false"   folder="images" />
+
+</param>
+
+
+ 

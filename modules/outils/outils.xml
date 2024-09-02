@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+     <field  name="pg_ar" type="pages" label="Autres Sim AR" description="menu"  class="form-control" readonly="false" />
+     <field  name="pg_fr" type="pages" label="Autres Sim FR" description="menu"  class="form-control" readonly="false" />
+     <field  name="pg_en" type="pages" label="Autres Sim EN" description="menu"  class="form-control" readonly="false" />
+     
+     
+   <field  name="p24" type="number" label="Prix 24 Carat" description="menu"  class="form-control" readonly="false" />
+   <field  name="p22" type="number" label="Prix 22 Carat" description="menu"  class="form-control" readonly="false" />
+   <field  name="p21" type="number" label="Prix 21 Carat" description="menu"  class="form-control" readonly="false" />
+   <field  name="p18" type="number" label="Prix 18 Carat" description="menu"  class="form-control" readonly="false" />
+ 
+   <field  name="nis" type="number" label="Quorum" description="menu"  class="form-control" readonly="false" />
+   
+   
+     <field  name="tva" type="text" label="TVA" description="tva"  class="form-control" readonly="false" />
+     <field  name="t_t1" type="text" label="Tayssir Taux 1" description="menu"  class="form-control" readonly="false" />
+     <field  name="t_t2" type="text" label="Tayssir Taux 2" description="menu"  class="form-control" readonly="false" />
+     <field  name="d_t1" type="text" label="D.A.S Taux  1" description="menu"  class="form-control" readonly="false" />
+     <field  name="d_t2" type="text" label="D.A.S Taux 2" description="menu"  class="form-control" readonly="false" />
+     <field  name="d_t3" type="text" label="D.A.S Taux 3" description="menu"  class="form-control" readonly="false" />
+       
+     
+        
+</param>
+
+
+ 

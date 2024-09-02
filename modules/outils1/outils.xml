@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+   <field  name="p24" type="number" label="Prix 24 Carat" description="menu"  class="form-control" readonly="false" />
+   <field  name="p22" type="number" label="Prix 22 Carat" description="menu"  class="form-control" readonly="false" />
+   <field  name="p21" type="number" label="Prix 21 Carat" description="menu"  class="form-control" readonly="false" />
+   <field  name="p18" type="number" label="Prix 18 Carat" description="menu"  class="form-control" readonly="false" />
+ 
+   <field  name="nis" type="number" label="Quorum" description="menu"  class="form-control" readonly="false" />
+   
+</param>
+
+
+ 

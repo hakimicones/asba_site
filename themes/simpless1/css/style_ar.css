@@ -1,0 +1,100 @@
+/* CSS Document */
+
+body { font-family:"Times New Roman", Times, serif; text-align:right;}
+
+h1,h2,h3,h4,h5,h6 { font-family:"Times New Roman", Times, serif; }
+h5 {font-size: 16px;} 
+h6 {font-size:14px;} 
+h4 { font-size:18px; } 
+.ligne { font-family:"Times New Roman", Times, serif; ; font-size:30px;} 
+
+footer h4  { font-family:"Times New Roman", Times, serif;  }
+
+.lg {
+   
+    left: 3%;
+	right:inherit;
+    
+}
+/**************************/
+#menu-top-menu {  margin-right:  95px; float: right;font-family:"GESS"; }
+.top_nav_wrapper {}
+.submenu {     right: 0;}
+ul#menu-main-menu .submenu li { text-align: right; }
+
+#menu-main-menu { float:right; margin-right:30px;font-family:"GESS";}
+ul#menu-main-menu   { width:90%;}
+ul#menu-main-menu li   { float:right;  }
+ul#menu-top-menu li   { float:right;  }
+
+ul#menu-main-menu   #search-btn , ul#menu-main-menu   #search-btn a { float:left}
+#search-btn a { padding-left: 0;}
+/*******************************/
+.txt-pub { font-size: 28px;}
+::placeholder { font-family:Verdana, Arial, Helvetica, sans-serif;  }
+
+.margin-top-40 {   margin-top: 20px;}
+.txt-accueil p {     padding: 0;}
+.article p  , #carouselNews .card-body p , footer { font-family:"Times New Roman", Times, serif; text-align:right;}
+#carouselNews .card-body a , #news .card-body a  { color:#FFFFFF;    float:left; font-family: "Times New Roman", Times, serif;}
+footer h3 {font-family:"GESS";}
+
+
+.top_nav .top_nav_wrapper>ul>li>ul li ul {
+    right: 101%;
+    
+}
+
+/**********************************/
+
+.article p, #carouselNews .card-body p, footer  { font-family:"Times New Roman", Times, serif;}
+
+
+.is-form-control::-moz-placeholder {	font-family:"GESS";}
+.is-form-control:-ms-input-placeholder { 	font-family:"GESS";}
+.is-form-control::-webkit-input-placeholder {	font-family:"GESS";}
+
+.agences h3   { font-family:serif, sans-serif;font-size: 20px;}
+
+.card-title {
+	font-size:18px;
+}
+
+.number { font-family:"Times New Roman", Times, serif;}
+.card-body a {    font-size: 17px;}
+.lire-plus   {text-align: left;    padding-top: 10px;}
+.lire-plus a { font-size:14px;}
+
+.card-text-news { font-size:12px;}
+.card-txt { height:50px;}
+
+/***********************************/
+
+.btn-cat { font-family:"Times New Roman", Times, serif;; font-size:20px; } 
+.prod-txt {
+    
+    font-size: 20px;
+}
+ 
+ .pan-slide {
+    padding: 5px 10px;
+    border-right: #eee 5px solid;
+    border-left: none;
+}
+.is_mob footer .div-right {
+    text-align: left;
+}
+.is_mob #video-pan .info .stm_video_url {     left: 90%; right:inherit; }
+
+body.header_style_2 .header_top .logo {
+    float: right;
+}
+
+
+/*************Mobile*************************/
+.is_mob .top_nav .top_nav_wrapper>ul>li>ul li ul {
+    right: auto;
+    left: auto;
+}
+ 
+

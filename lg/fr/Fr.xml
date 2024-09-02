@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <variables>
+	<var name="{Support Client}" trad="Tawassol" />
+	<var name="{avis}" trad="Votre avis nous intéresse" /> 
+	<var name="{news}" trad="Les News" />
+	<var name="{nom}" trad="Nom" />
+	<var name="{nomprenom}" trad="Nom et Prenom" />
+	<var name="{adresse}" trad="Adresse" />
+	<var name="{ville}" trad="Ville" />
+	<var name="{wilaya}" trad="Wilaya" />
+	<var name="{tel}" trad="Tel." />
+	<var name="{fax}" trad="Fax." /> 
+	<var name="{mob}" trad="Mob." />
+	<var name="{nele}" trad="Date de naissance" />
+	<var name="{lieu}" trad="Lieu de naissance" />
+	<var name="{sex}" trad="Je suis" />
+	<var name="{situation}" trad="Situation Civile" />
+	<var name="{postuler}" trad="Postuler" />	
+	<var name="{dern_poste}" trad="Dernier Poste" />
+	<var name="{formation}" trad="Formation" />
+	<var name="{experience}" trad="Experience" />
+ 	<var name="{autres experience}" trad="Autre Experience" />
+	<var name="{autres formations}" trad="Autre Formation" />
+ 	<var name="{universitaire}" trad="Universitaire" />	
+	<var name="{avec experience}" trad="Avec Experience" />
+	 
+    <var name="{contactez}" trad="Nous contacter" />
+	<var name="{ce_que_tu_veut}" trad="Ce que vous voulez dire" />
+	
+	 <var name="{accueil}" trad="Accueil" />
+	<var name="{votreemail}" trad="Votre E-mail" />
+	
+	<var name="{email}" trad="E-mail" />
+	<var name="{sujet}" trad="Sujet" />
+	<var name="{message}" trad="Message" /> 
+	<var name="{send}" trad="Envoyer" />
+	<var name="{close}" trad="Fermer" /> 
+ 	<var name="{effacer}" trad="Effacer" />
+	
+	<var name="{directeur}" trad="Directeur" />
+	<var name="{adjoint}" trad="Dir. Adjoint" />
+ 
+	<var name="{message2}" trad="(+213) (0) 23 304 580/304 584/661487016" />
+	<var name="{message_chat_1}" trad="" />
+	<var name="{message_chat_e}" trad="Nos conseillers clientèle ne sont pas disponibles actuellement, laissez-nous un message, ils vous contacteront par e-mail ou par téléphone.Cordiales Salutations" />
+	<var name="{message_chat_2}" trad="" />
+	<var name="{message_chat_3}" trad="" />
+	<var name="{horraire priere}" trad="Horaires des prières" />
+	<var name="{zakat}" trad="Zakat " />
+	<var name="{simul}" trad="Simulation" />
+	<var name="{meteo}" trad="Météo" />
+	<var name="{convertion}" trad="Convertisseur de devises" />
+	<var name="{isha}" trad="Icha" />
+	<var name="{maghreb}" trad="Magreb" />
+	<var name="{asr}" trad="Asr" />
+	<var name="{dhohr}" trad="Dhohr" />
+	<var name="{fedjr}" trad="Fadjr" />
+	<var name="{comptant}" trad="Valeur en argent" />
+	<var name="{or}" trad="Valeur en or " />
+	<var name="{montant}" trad="Montant" />
+	<var name="{poids en carat}" trad="Poids en carat" />
+	<var name="{calcul}" trad=" Calcul de la zakat" />
+	<var name="{message5}" trad="Le montant est inférieur à la valeur du jour" />
+	<var name="{facilites}" trad="Vente par facilités" />
+	<var name="{dar salam}" trad="Dar Essalam" />
+	<var name="{du dinar}" trad="Du Dinar vers la devise " />
+	<var name="{vers dinar}" trad="De la devise vers le Dinar " />
+	<var name="{montant transfer}" trad="Montant à convertir" />
+	<var name="{valeur zakat}" trad="Valeur de la Zakat" />
+	<var name="{message6}" trad="NB : Les Montants et les Taux sont donnés à titre indicatif" />
+	<var name="{humidite}" trad="Humidité" />
+	<var name="{vent}" trad="Vent" />
+	<var name="{prix bien}" trad="Prix du bien" />
+	<var name="{marge}" trad="Marge(%)" />
+	<var name="{financement equipement}" trad="Financement Equipement" />
+	<var name="{financement vehicule}" trad="Financement Véhicule" /> 
+	<var name="{salaire emprunteur}" trad="Salaire Acheteur" />
+	<var name="{salaire co-emprunteur}" trad="Salaire Co-Acheteur" />
+	<var name="{salaire Cumule}" trad="Salaire Cumulé" />
+	 
+	<var name="{capacite d endettement}" trad="Capacité d\'endettement Nette" />
+	<var name="{Nombre d echeances }" trad="Nombre d\'échéances (Mois)" />
+ 
+	<var name="{Nombre d echeances}" trad="Nombre d\'échéances" />	
+	
+	<var name="{montant echeance}" trad="Montant de l\'échéance (TTC)" />
+	
+	<var name="{participation Client}" trad="Participation Client /Hamich El Djadiah" />
+
+	<var name="{message7}" trad=" NB : Cette simulation vous est donnée à titre indicatif , et n\'engage nullement la banque. " />
+<var name="{message8}" trad=" NB : Faire défiler la boule bleue pour déterminer la période de financement. " />
+	
+    <var name="{financement dar al salam epargnant}"      trad="Si client épargnant" />
+	<var name="{financement dar al salam epargnant dom }" trad="Si client domicilié" />
+	<var name="{financement dar al salam non epargnant}" trad="Si client non domicilié" />
+	<var name="{montant a financer }" trad="Financement de la banque" />
+ 	<var name="{recherche}" trad="Recherche" />	
+	<var name="{add_page_success}" trad="Page ajouter avec succés" />	
+	<var name="{add_cv_success}" trad="Votre candidature est envoyé avec succés" />
+	<var name="{nous_contacterons}" trad="Nous vous Contacterons" />
+	<var name="{merci}" trad="Merci" /> 
+	<var name="{desole}" trad="Désolé" /> 
+	<var name="{marie}" trad="Marié" /> 
+	<var name="{marie_enfant}" trad="Marié avec enfants" /> 
+	<var name="{celibataire}" trad="Célibataire" /> 
+	<var name="{divorce}" trad="Divorcé" /> 
+	<var name="{veuf}" trad="Veuf ( ve)" /> 
+	<var name="{homme}" trad="Un Homme" /> 
+	<var name="{femme}" trad="Une Femme" /> 
+	<var name="{lire plus}" trad="Lire Plus" /> 
+	<var name="{reduire}" trad="Reduire" /> 
+	<var name="{imprimer}" trad="Imprimer" /> 
+	<var name="{partager}" trad="Partager" /> 	
+	 
+	 <var name="{dimunier texte}" trad="Diminuer Texte" /> 
+ 	 <var name="{agrandir texte}" trad="Agrandir Texte" /> 
+	 <var name="{prix auto}" trad="Prix d\'achat" /> 
+	 <var name="" trad="" /> 
+	 <var name="{rejoinez la news letter}" trad=" Abonnez-vous à notre newsletter" /> 
+	
+	 <var name="{agences}" trad="Agences" /> 
+	<var name="{cvtech}" trad="Recrutement" />  
+	<var name="{produits}" trad="Services" /> 
+	<var name="{da}" trad="Dinars Algeriens" /> 
+	<var name="{taux change}" trad="Taux de change" />
+	<var name="{convert}" trad="Conversion" />
+ <var name="{reponse} " trad="Réponse" /> 
+ <var name="{envoyer}" trad="Envoyer" />
+ 
+ 	<var name="{motorisation}" trad="Moteur" />
+	<var name="{edition}" trad="Edition" />
+	<var name="{convention}" trad="Convention" />
+	<var name="{apportPersonnel}" trad="Avance" />
+	<var name="{liste}" trad="Liste" />
+	<var name="{des}" trad="des" />
+	<var name="{stock}" trad="En Stock" />
+	 <var name="{vehicules}" trad="Vehicules" />
+	 <var name="{sim}" trad="Simulation" />
+	 <var name="{fiche technique}" trad="Fiche Technique" />
+	<var name="{dossier}" trad="Documents Requis" /> 
+	 <var name="{access}" trad="Accéder directement au site" /> 
+  
+	<var name="{typecompte}" trad="Type du compte" /> 
+	<var name="{montant-depose}" trad="Montant déposé" /> 
+	
+	<var name="{livretsepargne}" trad="Le livret d’épargne" /> 
+	<var name="{bons-investissements}" trad="Bons d’investissement" /> 
+	<var name="{comptes-epargnes}" trad="Comptes D’investissemens" /> 
+	<var name="{montant-remuneration}" trad="Marge bénéficiaire pour la durée" /> 
+	<var name="{montant-remuneration-3}" trad="Marge bénéficiaire trimestrielle" /> 
+	<var name="{montant-remuneration-an}" trad="Marge bénéficiaire annuelle" /> 
+	<var name="{dure}" trad="Maturité" /> 
+	<var name="{message-8}" trad="Une simulation indicative de ce qui a été distribué en moyenne générale au cours de l'année 2019 (bénéfice imprévisible à l'avance)" />
+	<var name="{motos}" trad="Motos" />  
+	<var name="" trad="" /> 
+	<var name="" trad="" /> 
+	<var name="{pass}" trad="Mot de Passe " />  
+	<var name="{inscription}" trad="Inscription" />  
+	<var name="" trad="" />  
+	<var name="" trad="" />  
+	<var name="" trad="" />  
+	<var name="" trad="" />  
+	<var name="" trad="" /> 
+	
+	<var name="{oumnyati}" trad="OUMNYATI" /> 
+	<var name="{hadiyati}" trad="Hadiyati" /> 	
+	<var name="{omrati}" trad="" /> 
+	
+	<var name="{mois}" trad="Mois" /> 
+	<var name="{calcul1}" trad=" Calcul " />
+	<var name="{votrenumeroticket}" trad="رقم التذكرة" /> 
+	<var name="{activer votre compte}" trad="" /> 
+	<var name="{Messageactivation}" trad="Merci , Vous allez recevoir un mail , Suivez le lien pour valider votre compte" /> 
+	
+	
+	
+		<var name="{email_deja_utiliser}" trad="Email déja utilisé" /> 
+ 
+   
+	<var name="{inscription1}" trad="Pas Inscrit ? Inscrivez vous" /> 
+	<var name="{login}" trad="Connexion" />  
+	<var name="{client}" trad="Déja client de la banque" />  
+	<var name="{pasclient}" trad="Pas encore client" />  
+    <var name="{compte}" trad="Compte" /> 
+	
+	<var name="{reclamation}" trad="Réclamations" /> 
+	<var name="{typedeticket}" trad="Type Ticket" /> 
+	<var name="{departement}" trad="Département / Agence" /> 
+	<var name="{chiox}" trad="Choix" /> 
+	<var name="{details}" trad="Détails" /> 
+	<var name="{etatticket}" trad="Etat de la réclamation" /> 
+<var name="{en_cours}" trad="En cours" /> 
+<var name="{en_attente}" trad="En attente" /> 
+
+<var name="{resolu}" trad="Ticket Résolu " /> 
+	<var name="{prive}" trad="Message Privé" /> 
+	<var name="" trad="" /> 
+	<var name="{history}" trad="Archives" /> 
+	<var name="{historyticket}" trad="Historique" />
+	
+	<var name="{msg-service}" trad="Al Salam Bank a votre service" /> 
+	
+	 <var name="{motos}" trad="Motos" /> 
+	
+
+	
+ </variables>

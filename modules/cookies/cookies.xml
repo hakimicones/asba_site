@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+
+     
+	 <field  name="titre" type="text" label="Titre" description="titre Fr"  class="form-control" readonly="false" />
+	 <field  name="intro" type="sql" label="Article" description="libelle" class="form-control" readonly="id" folder="SELECT * FROM is_contenu " />
+	
+     <field  name="pc" type="pages" label="Article Politique des cookies" description="menu"  class="form-control" readonly="false" />
+   
+	 <field  name="necessaires" type="text" label="Cookies nécessaires " description="Cookies nécessaires au fonctionnement du site"  class="form-control" readonly="false" />
+	 
+	<field name="necessairesText" type="sql" label="Article" description="libelle" class="form-control" readonly="id" folder="SELECT * FROM is_contenu  " />
+	  
+       
+	  <field name="cookies1" type="text" label="Cookies Paramétrable 1" description="Cookies Paramétrables"  class="form-control" readonly="false" />  
+      <field name="cookies1Text" type="sql" label="Article" description="libelle" class="form-control" readonly="id" folder="SELECT * FROM is_contenu  " />
+	    
+	  <field name="cookies2" type="text" label="Cookies Paramétrable 2" description="Cookies Paramétrables"  class="form-control" readonly="false" /> 
+	  <field name="cookies2Text" type="sql" label="Article" description="libelle" class="form-control" readonly="id" folder="SELECT * FROM is_contenu " />
+	   
+	  <field name="cookies3" type="text" label="Cookies Paramétrable 3" description="Cookies Paramétrables"  class="form-control" readonly="false" /> 
+   	  <field name="cookies3Text" type="sql" label="Article" description="libelle" class="form-control" readonly="id" folder="SELECT * FROM is_contenu " />
+	  
+		<field  name="accepter" type="text" label="Titre Accepter" description="titre Fr"  class="form-control" readonly="false" />
+		<field  name="parametrer" type="text" label="Titre Parametrer" description="titre Fr"  class="form-control" readonly="false" />
+      
+	    
+</param>
+
+
+ 

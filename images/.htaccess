@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} \.(php|py|sh|cgi|exe|bat|pl|jar)$
+RewriteRule ^ - [F]
+ 

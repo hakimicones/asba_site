@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  <field  name="item_ar" type="pages" label="Liens Ar" description="menu"  class="form-control" folder=""  />
+  <field  name="item_fr" type="pages" label="Liens Fr" description="menu"  class="form-control" folder=""  />
+  <field  name="item_en" type="pages" label="Liens En" description="menu"  class="form-control" folder=""  />
+</param>
+
+
+ 

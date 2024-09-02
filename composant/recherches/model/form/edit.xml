@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<form>
+<fieldset >
+
+<field  name="id"   id="id"    type="hidden" label="id"    description="Id"   class="readonly" size="10" readonly="true"/>  
+ 
+ <field  name="id_formation" type="sql" id="id_formation" label="Formation" class="uk-select" readonly="id" required="required" description="libelle" folder="SELECT * From   is_formations " /> 
+
+
+ 
+ <!--
+ <field  name=""   id=""    type="" label=""    description=""   class=""  readonly="true"/>  
+ <field  name=""   id=""    type="" label=""    description=""   class=""  readonly="false"/>  
+ -->
+ 
+
+
+</fieldset>
+
+<date1>
+ 	<field  name="date_debut"   id="date_debut"    type="date" label="Date début"    description="Date début"   class="uk-input"  readonly="false"/>
+	
+</date1>
+<date2>  
+
+	<field  name="date_fin"   id="date_fin"    type="date" label="Date Fin"    description="Date Fin"   class="uk-input" size="10" readonly="false"/>
+</date2>
+ 
+<obs>
+	 <field  name="prix"   id="prix"    type="number" label="Prix"    description="Prix"   class="uk-input"  readonly="false"/> 
+   <field  name="formateur"   id="formateur"    type="text" label="Formateur"    description="Formateur"   class="uk-input"  readonly="false"/>  
+<field  name="obs"  type="textarea" id="obs" label="Observation" class="uk-textarea" description="Observation"          readonly="false" required="required"/>	
+</obs>
+
+<nbr_heure>
+ <field  name="nbr_heure"   id="nbr_heure"    type="number" label="Durée"    description="Durée"   class="uk-input"  readonly="false"/>  
+</nbr_heure>
+<unite>
+<field  name="unite" id="unite" type="selectXML" description="type" required="required" label="Unité" folder="xml/unite.xml"  class="uk-select" readonly="0"  />
+</unite>
+
+</form> 

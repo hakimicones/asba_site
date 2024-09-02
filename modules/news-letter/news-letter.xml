@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<param>
+  
+  <field  name="titre"  type="text" label="Titre" description=""   class="form-control"   readonly="false"/>  
+  <field  name="text"  type="textarea" label="Message" description=""   class="form-control"   readonly="false"/> 
+  
+  
+  <field  name="message"  type="textarea" label="Message Retour" description=""   class="form-control"   readonly="false"/> 
+  
+  
+</param>
+
+
+ 

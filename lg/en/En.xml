@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <variables>
+	<var name="{Support Client}" trad="Support Client" />
+	<var name="{avis}" trad="Votre Avis" /> 
+	<var name="{nom}" trad="Nom" />
+	<var name="{email}" trad="E-mail" />
+	<var name="{sujet}" trad="Sujet" />
+	<var name="{message}" trad="Message" /> 
+	<var name="{send}" trad="Envoyer" />
+	<var name="{close}" trad="Fermer" /> 
+	<var name="{message2}" trad="(+213) (21) 222-222" />
+	<var name="{message_chat_1}" trad="" />
+	<var name="{message_chat_2}" trad="Aucun agent n\'est disponible" />
+	<var name="{message_chat_3}" trad="" />
+	<var name="{horraire priere}" trad="Horraire de priere" />
+	<var name="{zakat}" trad="Zakat " />
+	<var name="{simul}" trad="Simulation" />
+	<var name="{meteo}" trad="Meteo" />
+	<var name="{convertion}" trad="Conversion" />
+	<var name="{isha}" trad="Icha" />
+	<var name="{maghreb}" trad="Magreb" />
+	<var name="{asr}" trad="Asr" />
+	<var name="{dhohr}" trad="Dhohr" />
+	<var name="{fedjr}" trad="Fadjr" />
+	<var name="{comptant}" trad="Comptant" />
+	<var name="{or}" trad="Or" />
+	<var name="{montant}" trad="Montant" />
+	<var name="{poids en carat}" trad="Poids en carat" />
+	<var name="{calcul}" trad=" Calcul de la zakat" />
+	<var name="{message5}" trad="Le montant est inferieur a la valeur du jour" />
+	<var name="{facilites}" trad="Vente par facilités" />
+	<var name="{dar salam}" trad="Dar Essalam" />
+	<var name="{du dinar}" trad="Du Dinar" />
+	<var name="{vers dinar}" trad="Vers le Dinar" />
+	<var name="{montant transfer}" trad="Montant a covertir" />
+	<var name="{valeur zakat}" trad="Valeur de la Zakat" />
+	<var name="{message6}" trad="NB : Les Montants et les Taux sont données pour information" />
+	<var name="{humidite}" trad="Humidité" />
+	<var name="{vent}" trad="Vent" />
+	<var name="{prix bien}" trad="Prix du bien" />
+	<var name="{marge}" trad="Marge(%)" />
+	<var name="{financement equipement}" trad="Financement Equipement" />
+	<var name="{financement vehicule}" trad="Financement Véhicules" /> 
+	<var name="{salaire emprunteur}" trad="Salaire Emprunteur" />
+	<var name="{salaire co-emprunteur}" trad="Salaire Co-Emprunteur" />
+	<var name="{salaire Cumule}" trad="Salaire Cumulé" />
+	 
+	<var name="{capacite d endettement}" trad="Capacité d\'endettement Nette" />
+	<var name="{Nombre d echeances}" trad="Nombre d\'échéances (Mois)" />
+	<var name="{Nombre d echeances}" trad="Nombre d\'échéances" />	
+	
+	<var name="{montant echeance}" trad="Montant échéance (TTC)" />
+	
+	<var name="{participation Client}" trad="Participation Client /Hamich El Djadiah" />
+
+	<var name="{message7}" trad=" NB : cette simulation vous est donnée à titre indicatif , et n\'engage nullement la banque. " />
+	
+	
+    <var name="{financement dar al salam epargnant}" trad="Financement Dar Al Salam épargnant *" />
+	<var name="{financement dar al salam epargnant dom }" trad="Financement Dar Al Salam épargnant domicilié *" />
+	<var name="{financement dar al salam non epargnant}" trad="Financement Dar Al Salam non épargnant *" />
+	<var name="{montant a financer }" trad="Montant à financer" />
+ 	<var name="{recherche}" trad="Search" />	
+	
+	 
+	
+	
+ </variables>
