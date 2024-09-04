@@ -18,7 +18,7 @@ function insertData()
 	$browser     = $_POST['browser'];
 	$detect 	= new Mobile_Detect;
 
-	print_r($_POST);
+	 
 
 	$ip =   $_SERVER['REMOTE_ADDR'];
 	$cx  = new connect ; 

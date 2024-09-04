@@ -25,25 +25,25 @@ class modelBlog {
 		$this->db->addFrom('is_contenu as co');	 
 		
 		$this->db->addWhere('co.id_item = ca.id');	
-		
-		$this->db->addWhere('co.id_item = = :id'); 
+		$this->db->addWhere('co.id_item  = :id'); 
         $this->db->addParamToBind('id',  $this->num );
-		
-		
-		
 		 $this->db->addWhere('id_appli   = 11');	
 		 		
 		$this->db->addWhere('  co.publier  = 1');
 		$this->db->addOrderBy('ordre'); 
 		
 		if (!empty($search)) {
-		$s = "'%".$search."%'"; 
-		$this->db->addWhere(  '(co.libelle  Like '.$s.'  OR  `intro_text`  Like '.$s.')');
+			$s = "'%".$search."%'"; 
+			$this->db->addWhere(  '(co.libelle  Like '.$s.'  OR  `intro_text`  Like '.$s.')');
 		 }
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.$this->db->q; return '';  }
-        else {      $rows =  $this->db->getAllRows(); /*echo '<br><br>'.$this->db->q*/;}
+		 if (!$this->db->select())
+		 	{  
+		 		echo 'ERREUR->getData: '.$this->db->getErrMessage().'<br><br>'.$this->db->q; return '';  
+		 	} else {      
+		 		$rows =  $this->db->getAllRows(); /*echo '<br><br>'.$this->db->q*/;
+		 	}
 		
-	  return $rows;
+	  	return $rows;
 	 
 	 }
 	 	 

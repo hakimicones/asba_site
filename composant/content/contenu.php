@@ -12,7 +12,9 @@ class contenu {
 	
 	}
 
-	public function getPages($id,$cx,$ariane,$v) {
+	public function getPages($id,$cx,$ariane,$v) 
+
+	{
 	$url   = 'composant/content/view/tpl/form.php';
 	$menu  = file_get_contents($url) ; 
  
@@ -27,7 +29,8 @@ class contenu {
 
 
 
-public function getData($id,$cx,$ariane) {
+public function getData($id,$cx,$ariane) 
+{
 	$db =  $cx->db ; 
 	$db->emptyParams();
 	$db->resetSelect();
@@ -53,34 +56,32 @@ public function getData($id,$cx,$ariane) {
 		
 		 //echo str_replace(':id',$id,$db->q);
             $result = $db->getAllRows();  
-		    if (count($result)) {
+
+             if (count($result)) {
+		  
 			 foreach($result as $section) 
-					{  
-						$this->title = $section['title']   ; 
-						
-						$id_section = (!empty($section['id_section']))?$section['id_section']:'section_'.$section['id'];
-						 
-						$this->page .='<section id="'.$id_section.'" class = "'.$section['css'].'">'
-									.''
-									.$section['intro_text']
-									.'</section>' ;
-						$this->param = $section['param']   ;
-					}
-					} else 
-					{
+	{  
+		$this->title = $section['title']   ; 
+		
+		$id_section = (!empty($section['id_section']))?$section['id_section']:'section_'.$section['id'];
+		 
+		$this->page .='<section id="'.$id_section.'" class = "'.$section['css'].'">'
+					.''
+					.$section['intro_text']
+					.'</section>' ;
+		$this->param = $section['param']   ;
+	}
+
+     } else {
+
 					$this->title = 'Contenu Introuvable';
 					$this->page .='<section id="" class = "">'
-									.'<h3>Contenu  Introuvable </h3>'
+									.'<div class="alert alert-warning">Contenu  Introuvable </div>'
 									 
 									.'</section>' ;
 						$this->param = array()   ;
-						
-						$ariane = '404';
-						 
-					
-					}
-					
 
+     }
  
   }
     
