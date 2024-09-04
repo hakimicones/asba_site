@@ -550,7 +550,7 @@ private function getSafeInput($key, $default = null)
     public function getContenu()
     {
         //$this::URL_BASE .
-        
+        $this->tmp = (isset($_GET['theme'])) ? $_GET['theme'] : $this->tmp;
 
         if (isset($_GET['theme']))
         {
@@ -562,7 +562,13 @@ private function getSafeInput($key, $default = null)
         }
 
         $url = 'themes/' . $this->tmp . '/body.php';
-        $data = file_get_contents($url);
+        $path = realpath($targetDirectory . $fileName);
+
+        if (str_starts_with($path,  $targetDirectory)) {
+           $data =  file_get_contents($path);
+        }
+        
+         
 
         return $data;
     }
