@@ -550,7 +550,7 @@ private function getSafeInput($key, $default = null)
     public function getContenu()
     {
         //$this::URL_BASE .
-        $this->tmp = (isset($_GET['theme'])) ? $_GET['theme'] : $this->tmp;
+        
 
         if (isset($_GET['theme']))
         {
