@@ -13,8 +13,7 @@ class blog {
 	 	 
 		 $this->cx  = $c; 
 		 $this->lg	= strtolower($c->lg);
-	 
-		 
+	 	 
 		 $this->obj = new stdClass();
 		 $this->obj->lg 	= strtolower($c->lg);
 		 $this->obj->id 	= $c->id;
@@ -32,14 +31,12 @@ class blog {
    $model 				= new modelBlog ($this->cx->db ,$this->lg);
     
 	
-	$task =   (isset($_POST['task']))?$_POST['task']:'';
+	$task =   (isset($_POST['task']))?    strip_tags($_POST['task']):'';
 	 
-	if ( empty($task) && isset($_GET['task'])) { $task = $_GET['task'] ;  }
+	if ( !empty($task) && isset($_GET['task'])) { $task = strip_tags($_GET['task']) ;  }
 	
-    if  (!empty($task) && $task!='list' ) {  
-	
-	
-	
+    if  (!empty($task) && $task!='list' ) 
+	{  
 	
 	$method = 'get'.ucfirst($task);
 	
@@ -50,11 +47,6 @@ class blog {
 	
 	$row	= $model->$method ($_POST) ; 
 	 
- 	
-	
-	 
-	
-	
 	
 	$view  = new viewBlog ($row,$this->obj);
 	$data  = $view->$method();

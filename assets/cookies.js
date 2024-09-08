@@ -22,7 +22,10 @@ function masquerBanniereCookies() {
      document.getElementById("cookiePreferencesPopup").style.height = "50%";
    }
   }
-  function checkbox() {
+
+
+  function checkbox() 
+  {
     // Obtenir la référence à l'iframe
      var cookiePreferencesPopup = document.getElementById('cookiePreferencesPopup');
      var iframecookiePreferencesPopup = cookiePreferencesPopup.contentDocument || cookiePreferencesPopup.contentWindow.document;
