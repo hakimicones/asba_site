@@ -18,29 +18,29 @@ function insertData()
 	$browser     = $_POST['browser'];
 	$detect 	= new Mobile_Detect;
 
-	 
-
 	$ip =   $_SERVER['REMOTE_ADDR'];
 	$cx  = new connect ; 
 
-	if ( $cx->con()) { 
-	$db = $cx->db; 
-	$cfg = $cx->cfg  ;	
-	$adminMail = $cfg->email_admin;	
-	$date = date('Y-m-d H:i:s');
-	$data = $_POST ;
+	if ( $cx->con()) 
+	{ 
 
-	$db->resetInsert();
+		$db = $cx->db; 
+		$cfg = $cx->cfg  ;	
+		$adminMail = $cfg->email_admin;	
+		$date = date('Y-m-d H:i:s');
+		$data = $_POST ;
 
-	$db->setTableForInsert('is_cookies');
+		$db->resetInsert();
 
-	$db->setInsertingRub('IP',$ip ); 
-	 
-	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'Tablète' : 'Mobile') : 'Computer');
-	$info = $deviceType.' :  '.$browser ;
+		$db->setTableForInsert('is_cookies');
 
-	$db->setInsertingRub('info',  $info  );
- 	$db->setInsertingRub('acceptation',$acceptation  );  
+		$db->setInsertingRub('IP',$ip ); 
+		
+		$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'Tablète' : 'Mobile') : 'Computer');
+		$info = $deviceType.' :  '.$browser ;
+
+		$db->setInsertingRub('info',  $info  );
+		$db->setInsertingRub('acceptation',$acceptation  );  
 
 	if ($db->insert()) {
 
