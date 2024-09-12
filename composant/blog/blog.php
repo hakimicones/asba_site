@@ -6,9 +6,12 @@ class blog {
 	public $cx;
 	public $db ;
 	public $obj;	
+	private $task_List = array('list','Tabs','Faq','Blog','');
  
    public function __construct($c)
 	{
+		
+		
 		
 	 	 
 		 $this->cx  = $c; 
@@ -28,14 +31,40 @@ class blog {
    
    
  
-   public function display() {
+   public function display() 
+   
+   {
+   
+     $retour = new stdClass ;
+	
    
    $model 				= new modelBlog ($this->cx->db ,$this->lg);
     
 	
-	$task =   (isset($_POST['task']))?    strip_tags($_POST['task']):'';
+	$task =   (isset($_POST['task']))?    strip_tags($_POST['task']):''; 
+	
+	if ( empty($task) && isset($_GET['task'])) { $task = strip_tags($_GET['task']) ; 
 	 
-	if ( !empty($task) && isset($_GET['task'])) { $task = strip_tags($_GET['task']) ;  }
+	
+	
+	if (!in_array($task,  $this->task_List)) 
+	
+	{
+	
+	$retour->data 		= '<div class="alert alert-danger"> Fonction '.$task.'inconnues </div>'; 
+	 
+	$retour->ariane 	= $this->remplace_ariane(); 
+	$retour->titre		=  'Erreur 404';
+	
+		return $retour ;
+        
+    } ELSE {
+	
+	
+	print_r($_GET);
+	
+	}
+	
 	
     if  (!empty($task) && $task!='list' ) 
 	{  
@@ -45,7 +74,7 @@ class blog {
 		$this->ariane .='<li>{'.strtolower($task).'}</li>';
 		$ariane 	=  $this->remplace_ariane();
 		
-		$row	= call_user_func_array($method ,$_POST) ; 
+		$row	= call_user_func_array($model, $method  ) ; 
 		
 		$view  = new viewBlog ($row,$this->obj);
 		$data = call_user_func([$view, $method]);
@@ -65,7 +94,7 @@ class blog {
 	 
 	}
 	
-	$retour = new stdClass ;
+	 
 	$retour->data 		= $data; 
 	 
 	$retour->ariane 	= $this->remplace_ariane(); 
