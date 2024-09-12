@@ -5,8 +5,8 @@ function masquerBanniereCookies() {
   //onclick="cookiesparametrage()" id="cookiesparametrage"
 //CoockiesParametrage
   function cookiesparametrage() {
-    var cookiePreferencesPopup = document.getElementById('cookiePreferencesPopup');
-    var iframecookiePreferencesPopup = cookiePreferencesPopup.contentDocument || cookiePreferencesPopup.contentWindow.document;
+    let cookiePreferencesPopup = document.getElementById('cookiePreferencesPopup');
+    let iframecookiePreferencesPopup = cookiePreferencesPopup.contentDocument || cookiePreferencesPopup.contentWindow.document;
   
    if (iframecookiePreferencesPopup.getElementById("CoockiesParametrage").style.display == "none") {
        iframecookiePreferencesPopup.getElementById("CoockiesParametrage").style.display = "block";

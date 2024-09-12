@@ -296,35 +296,7 @@ return false;
  
  function envoiMail1($mail, $sujet,$message) { 
 	 	 
-
-$host = "mail.icon-dz.com";
-$port = 587;
-$username = "contact@icon-dz.com";
-$password = "a147z258e369";
-
-
-$from = "contact@icon-dz.com";
-$to = "nouashakim@gmail.com";
-$to = "hakimnouas@hotmail.com";
-
-$mail = new Email($host, 465);
-$mail->setProtocol(Email::SSL)
-    ->setLogin($username, $password)
-    ->setFrom($from )
-    ->setSubject('Sujet')
-    ->setTextMessage('Plain text message')
-    ->setHtmlMessage('<strong>HTML  Message Pour Tester</strong>')
-    ->addTo($to)
-    ->addAttachment(dirname(__DIR__) . '/LICENSE')
-    ->addAttachment(dirname(__DIR__) . '/README.md');
-
-if ($mail->send()) {
-    echo 'Message Envoye a ' .$to . PHP_EOL;
-    exit(0);
-}
-
-echo 'An error has occurred. Please check the logs below:' . PHP_EOL;
-print_r($mail->getLogs());
+ 
 	
 	}	
 
