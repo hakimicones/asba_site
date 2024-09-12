@@ -74,7 +74,7 @@ class blog {
 		$this->ariane .='<li>{'.strtolower($task).'}</li>';
 		$ariane 	=  $this->remplace_ariane();
 		
-		$row	= call_user_func_array($model, $method  ) ; 
+		$row	= $model->$method ; 
 		
 		$view  = new viewBlog ($row,$this->obj);
 		$data = call_user_func([$view, $method]);
