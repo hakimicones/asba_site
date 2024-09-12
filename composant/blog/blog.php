@@ -26,6 +26,8 @@ class blog {
 		 
 	}
    
+   
+ 
    public function display() {
    
    $model 				= new modelBlog ($this->cx->db ,$this->lg);
@@ -38,33 +40,28 @@ class blog {
     if  (!empty($task) && $task!='list' ) 
 	{  
 	
-	$method = 'get'.ucfirst($task);
-	
-	$this->ariane .='<li>{'.strtolower($task).'}</li>';
-	$ariane 	=  $this->remplace_ariane();
-	
-	
-	
-	$row	= $model->$method ($_POST) ; 
-	 
-	
-	$view  = new viewBlog ($row,$this->obj);
-	$data  = $view->$method();
+		$method = 'get'.ucfirst($task);
+		
+		$this->ariane .='<li>{'.strtolower($task).'}</li>';
+		$ariane 	=  $this->remplace_ariane();
+		
+		$row	= call_user_func_array($method ,$_POST) ; 
+		
+		$view  = new viewBlog ($row,$this->obj);
+		$data = call_user_func([$view, $method]);
 	
 	} else {
-    $search ='';
-	if (isset($_POST['search'])) {$search =$_POST['search']; }  
 	
-	
-	$row				= $model->getData($search); 
-	
-	 
-     
-	 
-	$view  = new viewBlog ($row,$this->obj);
-	$data  = $view->display(); 
-	$this->ariane .= '<li>'.$view->ariane.'</li>';
- 
+		$search ='';
+		if (isset($_POST['search'])) {$search =$_POST['search']; }  
+		
+		
+		$row				= $model->getData($search); 				 
+		 
+		$view  = new viewBlog ($row,$this->obj);
+		$data  = $view->display(); 
+		$this->ariane .= '<li>'.$view->ariane.'</li>';
+		
 	 
 	}
 	
@@ -72,7 +69,7 @@ class blog {
 	$retour->data 		= $data; 
 	 
 	$retour->ariane 	= $this->remplace_ariane(); 
-	$retour->titre		= $view->titre;
+	$retour->titre		= $view->titre.'_'.$task;
 	 
 	return $retour ;
    
