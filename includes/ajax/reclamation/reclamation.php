@@ -120,7 +120,7 @@ public function getreplies()
          
         $this->db ->setInsertingRub("prive",$data['prive']);
          $this->db ->addParamToBind('userid', $data['t']);
-        $this->db ->addParamToBind('text', $data['replies']);
+        $this->db ->addParamToBind('text', htmlspecialchars($data['replies']));
         $this->db ->addParamToBind('ticketid', $data['u']);
         
 $html=""; 
@@ -134,7 +134,7 @@ $html="";
       <p class="phistory">'.date("Y-m-d H:m:s").'</p>
     </div>
     <div class="body">
-      <p class="phistory" >' .$data['replies'].'</p>
+      <p class="phistory" >' .htmlspecialchars($data['replies']).'</p>
       
     </div>
   </div> ';}

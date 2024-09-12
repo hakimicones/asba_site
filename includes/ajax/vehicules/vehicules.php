@@ -23,7 +23,7 @@ if ( $cx->con()) {
 function AffModel() {
 
  
-        $id =   (isset($_POST['id']))?$_POST['id']:0;
+        $id =   (isset($_POST['id']))?  (int) $_POST['id']:0;
 		
 		 
 		if($id) {;
@@ -63,7 +63,7 @@ function AffModel() {
 
 
        } else {
-	    echo '$id : '.$_POST['id'];
+	    echo '$id : '.(int) $_POST['id'];
 	    
 	   
 	   }
