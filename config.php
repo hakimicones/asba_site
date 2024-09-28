@@ -3,13 +3,13 @@ class config {
 
 		public $offline = '0';
 		public $host	='localhost'; 
-		public $dbname 	= 'asba1'; 
+		public $dbname 	= 'alsalam'; 
 		public $user = 'root';
 		//public $pass = '';	
 		public $pass = '';   
 		public $lg  = '';
-		public $url = 'http://localhost/alsalam_server/'; 
-		public $path = 'http://localhost/alsalam_server/'; 
+		public $url = 'http://localhost/alsalam/'; 
+		public $path = 'http://localhost/alsalam/'; 
 		public $theme = 'simpless';
 		public $duree = 30;
 		public $lg_def = 'ar';

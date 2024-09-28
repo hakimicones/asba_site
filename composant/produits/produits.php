@@ -11,11 +11,10 @@ class produits {
 	public $titre; 
 	public $ariane;
 	public $page_id;
+	private $task_List = array('list','detail' ,'');
 	
     public function __construct($c)
 	{
-	
-	 
 	 
 		 $this->cx  		 = $c; 
 		 $this->lg			 = strtolower($c->lg);		 
@@ -48,6 +47,17 @@ class produits {
 	
 	
     $model 				= new modelProduits($this->cx->db ,$this->obj);
+	
+	if (!in_array($tsk,  $this->task_List)) {
+	
+		$retour->data 		=   '<div class="container"><div class="alert alert-danger"> Fonction '.$tsk.' inconnue </div></div>'; 
+		 
+		$retour->ariane 	= $this->remplace_ariane(); 
+		$retour->titre		= 'Page inconnue';
+		
+		return $retour ;
+         
+    }	 
  
 	
     if ( (isset($tsk))    && $tsk!='liste' ) {  

@@ -6,6 +6,8 @@ class cvtech {
 	public $cx;
 	public $db ;
 	public $obj;	
+	
+	private $task_List = array('list','Tabs','Faq','Blog','');
  
    public function __construct($c)
 	{
@@ -22,7 +24,10 @@ class cvtech {
 		 
 	}
    
-   public function display() {
+   public function display() 
+   
+   {
+   $retour = new stdClass ;
    
    $model 				= new modelCvtech($this->cx->db ,$this->lg);
     
@@ -30,6 +35,19 @@ class cvtech {
 	$task =   (isset($_POST['task']))?$_POST['task']:'';
 	 
 	if ( empty($task) && isset($_GET['task'])) { $task = $_GET['task'] ;  }
+	
+	
+	
+		if (!in_array($task,  $this->task_List)) {
+	
+		$retour->data 		=   '<div class="container"><div class="alert alert-danger">La  Tache '.$task.' inconnue </div></div>'; 
+		 
+		$retour->ariane 	= $this->remplace_ariane(); 
+		$retour->titre		= 'Page inconnue';
+		
+		return $retour ;
+         
+    }
 	
     if  (!empty($task) && $task!='list' ) {  
 	
@@ -70,7 +88,7 @@ class cvtech {
 	$view  = new viewCvtech($row,$this->obj);
 	$data  = $view->display(); }
 	
-	$retour = new stdClass ;
+	 
 	$retour->data 		= $data; 
 	
 	$retour->ariane 	= $ariane;

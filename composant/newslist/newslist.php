@@ -10,6 +10,7 @@ class newslist {
 	public $titre; 
 	public $ariane;
 	public $page_id;
+	private $task_List = array('list','detail' ,'');
 
     public function __construct($c)
 	{
@@ -44,15 +45,28 @@ class newslist {
    public function display() {
    
  	 
+	
+	$retour = new stdClass ;
+	
 	$tsk = $this->getInput(); 
 	
 	
     $model 				= new modelNewslist($this->cx->db ,$this->obj);
+	
+	if (!in_array($tsk,  $this->task_List)) {
+	
+		$retour->data 		=   '<div class="container"><div class="alert alert-danger"> Fonction '.$tsk.' inconnue </div></div>'; 
+		 
+		$retour->ariane 	= $this->remplace_ariane(); 
+		$retour->titre		= 'Page inconnue';
+		
+		return $retour ;
+         
+    }	 
  
 	
-    if ( (isset($tsk) && !empty($tsk))    && $tsk!='list' ) {  
-
- 
+    if ( (isset($tsk) && !empty($tsk))    && $tsk!='list' ) 	
+	{   
 	 
 	$method = 'get'.ucfirst($tsk);
 	$row	= $model->$method ($_POST) ; 
@@ -60,13 +74,13 @@ class newslist {
  
  
 	$this->ariane .='<li>{news}</li><li>'.$row['title' ].'</li>';
- 
- 
-    
-	
+ 	
 	$view  = new viewNewslist($row,$this->obj);
 	$data  = $view->$method();
+	
+	
 	$ariane 	=  $this->remplace_ariane();
+	
 	} else {
     $search ='';
 	if (isset($_POST['search'])) {$search =$_POST['search']; }  
@@ -83,8 +97,6 @@ class newslist {
 	}
 	
 	
-	
-	$retour = new stdClass ;
 	$retour->data 		= $data; 
 	$retour->ariane		= $ariane;
 	

@@ -6,6 +6,7 @@ class vehicules {
 	public $cx;
 	public $db ;
 	public $obj;	
+	private $task_List = array('list','simulation' ,'');
    public function __construct($c)
 	{
 		 $this->cx  = $c; 
@@ -21,14 +22,31 @@ class vehicules {
 		 
 	}
    
-   public function display() {
-   $model 	= new modelVehicules($this->cx->db ,$this->lg);
+   public function display() 
+   {
+   	
+	$retour = new stdClass ;
+	
+    $model 	= new modelVehicules($this->cx->db ,$this->lg);
     $search ='';
 	if (isset($_POST['search'])) {$search =$_POST['search']; } 
 	
 	$task =   (isset($_POST['task']))?$_POST['task']:'';
+	
+	
 	 
 	if ( empty($task) && isset($_GET['task'])) { $task = $_GET['task'] ;  }
+	
+	if (!in_array($task,  $this->task_List)) {
+	
+		$retour->data 		=   '<div class="container"><div class="alert alert-danger"> Fonction '.$task.' inconnue </div></div>'; 
+		 
+		$retour->ariane 	= $this->ariane.' <li>{vehicules} </li>' ;
+		$retour->titre		= 'Page inconnue';
+		
+		return $retour ;
+         
+    }	 
 	
     if  (!empty($task)   ) { 
 	
@@ -36,7 +54,8 @@ class vehicules {
 	
 	$row	= $model->$method( $search) ; 	
 	
-	if ($task = 'simulation')  { 
+	if ($task = 'simulation') 
+	 { 
 			$this->conv  = $model->getConventions() ;
 			$this->param = $model->getOutilsParams();
 			
@@ -58,8 +77,7 @@ class vehicules {
 	$data  = $view->$method();
 	}
 	
-	
-	$retour = new stdClass ;
+
 	$retour->data 		= $data; 
 	
 	$retour->ariane 	= $this->ariane.' <li>{vehicules} </li>' ;

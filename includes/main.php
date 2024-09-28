@@ -170,9 +170,9 @@ private function getSafeInput($key, $default = null)
 			
 			$this->title =	  $page['title']  ;
 					  	
-			if ($this->param->volet1) {   } else {$this->affTitle =   'style="display:none"' ;  }
+			if (isset($this->param->volet1) &&$this->param->volet1) {   } else {$this->affTitle =   'style="display:none"' ;  }
 		 
-			if ($this->param->volet2!='false') { 	
+			if ( isset($this->param->volet2) && $this->param->volet2!='false') { 	
 
 
 			 

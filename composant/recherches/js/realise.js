@@ -99,8 +99,12 @@ function ajax_send(donnees,func) {
 			 if (data!='') {
 			 
 			      
-  console.log(data);
-			  eval(func);
+			  console.log(data);
+			  
+			  if (typeof func === "function") { 
+				eval(func);
+			}
+			  
 				
 				    
 				  

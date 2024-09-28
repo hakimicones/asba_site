@@ -37,9 +37,7 @@ class recherches {
  
  public  function display() {
 
- 	 $h = fopen('fic.err','a');
-	  fwrite($h,json_encode($_POST));
-    fclose($h);
+ 	 
      
  	$this->model   	=  new recherchesModel($this);
 

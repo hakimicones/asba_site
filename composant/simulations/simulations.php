@@ -56,7 +56,7 @@ class simulations {
 	
     if ( (isset($tsk))    && $tsk!='liste' ) {  
 
- 
+ /*
 	 
 	$method = 'get'.ucfirst($tsk);
 	$row	= $this->model->$method ($_POST) ; 
@@ -77,7 +77,11 @@ class simulations {
 	
 	$data  = $view->$method();
 	$ariane 	=  $this->remplace_ariane();
+	
+	*/
 	} else {
+	
+	
     $search ='';
 	if (isset($_POST['search'])) {$search =$_POST['search']; }  
 	
