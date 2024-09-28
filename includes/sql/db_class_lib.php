@@ -227,13 +227,21 @@
 
                 $this->connected = true;
             }
-            catch (PDOException $e) {
+            catch (PDOException $e) 
+            {
+
+                $h = fopen('sql_error.log','a');
+
+                $err = date('d-m-Y  H:i').' '.$e->getMessage();
+
+                fwrite($h, $err);
+                fclose($h);
 				
-				echo  $connString.'<br> password : '.$this->password.'<br> user : '.$this->login.'<br>'.$e->getMessage().'<br><br><br>';
+				 
 				
                 $this->errMessage = $e->getMessage();
 				
-				die($e->getMessage());
+				die( 'Erreur de connexion SQL');
             }
         }
 

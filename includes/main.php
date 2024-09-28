@@ -32,9 +32,10 @@ class main {
 	
 	 
 	
-	public function conect() { 	$this->cx = new connect ;  	if ( $this->cx->con()) { $this->db = $this->cx->db ; return true ;} else { return false;}	}
-	
-    	
+public function conect() { 	$this->cx = new connect ;  	if ( $this->cx->con()) { $this->db = $this->cx->db ; return true ;} else { return false;}	}
+
+
+   	
 public function getOption()
 {
     // Générer une clé de session si elle n'existe pas

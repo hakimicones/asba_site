@@ -39,7 +39,13 @@ class modelFatawa {
 
 
 		 }
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){ 
+			
+			$this->cx->getMessageErr('Fatawa->getData: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 	
+		
+		
+		}
         else {       $rows =  $this->db->getAllRows();}
 		
 	  return $rows; } else {return 0;}
@@ -57,7 +63,13 @@ class modelFatawa {
 		$this->db->addOrderBy('ordre'); 
 		
 		
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			
+			$this->cx->getMessageErr('Fatawa->getCat: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 	
+		
+		
+		}
         else {      $rows =  $this->db->getAllRows();}
 		
 	  return $rows;

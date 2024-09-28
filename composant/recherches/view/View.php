@@ -22,26 +22,49 @@ public function __construct($obj)
 
 		$url = 'composant/recherches/view/tpl/default.php';
 	  $f = file_get_contents($url) ;
+
+	  $input = $_POST['rech-input'];
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			// Validation et nettoyage des données
+		
+
+			// Échapper les caractères spéciaux
+			$input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+
+			// Supprimer les balises HTML
+			$input = strip_tags($input);
+
+			// Limiter la longueur
+			$input = substr($input, 0, 255);
+
+			 
+			 
+		}
+
+ 
+ 
 				
-	  $rows   = $this->model->getContenu($_POST['rech-input']);
+	    $rows   = $this->model->getContenu($input);
+
 		$tag[]  = '{contenu}';
 		$ext[]  =  $this->getContenu($rows,'page'); 
 				
-		$rows = $this->model->getFatawa($_POST['rech-input']);
+		$rows = $this->model->getFatawa($input);
 		$tag[]  = '{contenufatawa}';
 		$ext[]  =  $this->getFatawa($rows );
 		
-		$rows = $this->model->getProds( $_POST['rech-input']);
+		$rows = $this->model->getProds( $input);
 		$tag[]  = '{contenuproduits}';
 		$ext[]  =  $this->getContenu($rows,'produits');		
 	
-		$rows = $this->model->getNews($_POST['rech-input']);
+		$rows = $this->model->getNews($input);
 		$tag[]  = '{contenunews}';
 		$ext[]  =  $this->getContenu($rows,'newslist');
 		/**/
 		
 		$tag[]  = '{rech}';
-	 	$ext[]  =  $_POST['rech-input'];
+	 	$ext[]  =  $input;
 		
 		$data = str_replace ( $tag , $ext , $f) ;
 		

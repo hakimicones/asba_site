@@ -51,7 +51,13 @@ public function getData($id,$cx,$ariane)
 	$db->addParamToBind('id', $id ); 
 	
 	
-	  if (!$db->select()){ echo 'ERREUR CONTENU: '.$db->getErrMessage().'<br><br>'; }
+	  if (!$db->select()){ 
+		
+		$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+		return ''; 
+	
+	
+	}
         else {   
 		
 		 //echo str_replace(':id',$id,$db->q);
@@ -74,7 +80,7 @@ public function getData($id,$cx,$ariane)
 
      } else {
 
-					$this->title = 'Contenu Introuvable';
+					$this->title = '';
 					$this->page .='<section id="" class = "">'
 									.'<div class="alert alert-warning">Contenu  Introuvable </div>'
 									 

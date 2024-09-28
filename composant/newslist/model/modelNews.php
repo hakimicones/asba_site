@@ -33,14 +33,22 @@ class modelNewslist {
   		
   		$this->db->addOrderBy('date DESC');
 		 
-		 if (!$this->db->select()){  echo 'ERREUR->LISTE: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select())
+		 {  
+			
+			$this->cx->getMessageErr('Newslist->getData: '.$db->getErrMessage().'  '.$db->q);
+			return '';
+			 
+		
+		}
         else {  $rows =  $this->db->getAllRows();}
 		
 	  return $rows;
 	 
 	 }
 	 
-	 public function getDetail() {
+	 public function getDetail() 
+	 {
 	 
 		$this->db->resetSelect();
 		$this->db->addSelected('* ','' );
@@ -48,17 +56,16 @@ class modelNewslist {
 		$this->db->addWhere(' id = :id');
 		$this->db->addParamToBind('id', $this->id ); 
 		
-		 if (!$this->db->select()){  echo 'ERREUR->DETAILS: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			
+			$this->cx->getMessageErr('Newslist->getDetail: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 	 
+		}
         else {    $row  =   $this->db->getNextRow(); }
 		
 	  return $row ;
 	
 	} 
-	 
-	
-	 
- 
-	
 	
 	public function addClick($id){
 		 

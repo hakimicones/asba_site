@@ -47,7 +47,7 @@
 				
 		if (!$this->db->select()){  
 		
-		$data->erreur = 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
+		$data->erreur = 'Recherches->getContenu: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
 		$data->Row = array();
 		
 		
@@ -58,7 +58,7 @@
 }
 
    /*********************************************/
-	// 005 00425 0000006439 76
+ 
 	 
 	public function getFatawa($rech) {
  	 	 	 	 	 		 	
@@ -83,7 +83,7 @@
 				
 		if (!$this->db->select()){  
 		
-		$data->erreur = 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
+		$data->erreur = 'Recherches->getFatawa: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
 		$data->Row = array();
 		
 		
@@ -123,7 +123,7 @@ $this->db->emptyParams();
 				
 		if (!$this->db->select()){  
 		
-		$data->erreur = 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
+		$data->erreur = 'ERREUR->getProds: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
 		$data->Row = array();
 		
 		
@@ -155,7 +155,7 @@ public function getNews( $rech) {
 				
 		if (!$this->db->select()){  
 		
-		$data->erreur = 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
+		$data->erreur = 'ERREUR->getNews: '.$this->db->getErrMessage().'<br><br>'.$this->db->q;
 		$data->Row = array();
 		
 		
@@ -165,11 +165,7 @@ public function getNews( $rech) {
 		return $data;					
 }
 	  
-	 
-
-
+	 /*************************
+	  * Fin classe
+	  **************************/
 }
-
- 
- 
- 

@@ -38,7 +38,9 @@ class modelBlog {
 		 }
 		 if (!$this->db->select())
 		 	{  
-		 		echo 'ERREUR->getData: '.$this->db->getErrMessage().'<br><br>'.$this->db->q; return '';  
+				$this->cx->getMessageErr('ERREUR->getData: '.$db->getErrMessage().'  '.$db->q);
+				return ''; 
+				  
 		 	} else {      
 		 		$rows =  $this->db->getAllRows(); /*echo '<br><br>'.$this->db->q*/;
 		 	}

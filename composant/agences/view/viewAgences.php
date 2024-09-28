@@ -18,15 +18,15 @@ class viewAgences {
 	$longitude = '';
 	$i=0; 
 	
-	$region = (isset($_POST['region'])) ? $_POST['region'] : 1 ;
+	$region = (isset($_POST['region'])) ?  (int) $_POST['region'] : 1 ;
+
+
 	$select = $this->renSelctXML(  $region);
 	
 	$li = 	'<section id="agences"   style="margin-top: 20px;">'
 			.'<script type="text/javascript src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLnbl2BaBM5e8dbVZBEkUnrZ5KhxFU_SI&language=fr"></script>'
 			.'<div class="container"> <form action="'.$this->lg.'/agences/list-'.$this->id.'-0.html" method="post" >  '.$select.' <div class="row">
-			  <div class="col-lg-4">
-			'
-			 
+			  <div class="col-lg-4">'			 
 			.'<ul class="agences">';
 			
 			$active ="active";
@@ -45,24 +45,12 @@ class viewAgences {
 					 </a>
 				 </h3>
 				 <div class="lib adr" >'	.$row['adresse_'.$this->lg] .'</div>';
-		$l1   =' ';
+		$l1   ='';
 		
 		$l2   ='';
-		$active ="";
-		/*
+		$active ="";		
 		
-		$l2   =	 '<div id="cont-'.$i.'" class="col-sm-5"><div class="c_int">  <br>'
-				 .'<div><span class="lib" >{tel} : </span><span  class="chif" dir="ltr" >'.$row['tel'].'</span></div>' 
-				 .'<div><span class="lib" >{fax} : </span><span  class="chif" dir="ltr" >'.$row['fax'].'</span></div>' 
-				 .'<div ><span class="lib" >{email}:</span><span  class="chif" > '.$row['email'].'</span></div><br><br>'
-				 .'<div><span class="lib" >{directeur} : </span><span  class="chif"  >'.$row['directeur_'.$this->lg].'</span></div>' 
-				 .'<div ><span class="lib" >{adjoint}:</span><span  class="chif" > '.$row['adjoint_'.$this->lg ].'</span></div>'.				 
-		'</div></div>';
-		
-		*/
-		
-		
-		$l3   = ' '; 
+		$l3   = ''; 
 		
 		
 		 if ( $this->lg!='ar') { $li .= $l3. $l2 . $l1; } else{ $li .= $l1 .$l2.$l3; } 
@@ -78,13 +66,8 @@ class viewAgences {
 					    </div>  </section>';
 						
 						
-		$script = '<script>
-		
-		 function submit() {
+		$script = '<script>	
 		 
-		  alert(1);
-		 
-		 }
 		 
 		 function affMap(long,lat,e) {
 		 

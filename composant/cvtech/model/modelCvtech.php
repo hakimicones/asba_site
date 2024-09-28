@@ -26,7 +26,11 @@ class modelCvtech {
 		$s = "'%".$search."%'"; 
 		$this->db->addWhere(  'libelle_'.$this->lg.' Like '.$s.'  OR  `niveau_poste`  Like '.$s.' OR  `niv_etude`   Like '.$s.'');
 		 }
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			$this->cx->getMessageErr('Cvtech->getData: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+		
+		}
         else { $rows =  $this->db->getAllRows();}
 		
 	  return $rows;
@@ -41,7 +45,12 @@ class modelCvtech {
 		$this->db->addOrderBy('ordre'); 
 		
 		 
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){ 
+			
+			$this->cx->getMessageErr('Cvtech->getTypeContrat: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 	
+		
+		}
         else {  $rows =  $this->db->getAllRows();}
 		
 	  return $rows;
@@ -57,7 +66,12 @@ class modelCvtech {
 		$this->db->addOrderBy('ordre'); 
 		
 		 
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			
+			$this->cx->getMessageErr('Cvtech->getExperience: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 	
+		
+		}
         else {  $rows =  $this->db->getAllRows();}
 		
 	  return $rows;
@@ -72,7 +86,12 @@ class modelCvtech {
 		$this->db->addWhere(' `publier` = 1');
 		$this->db->addOrderBy('ordre'); 
 		
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			
+			$this->cx->getMessageErr('Cvtech->getNiveau: '.$db->getErrMessage().'  '.$db->q);
+			return '';	
+		
+		}
         else {  $rows =  $this->db->getAllRows();}
 		
 	  return $rows;
@@ -145,7 +164,10 @@ $this->db->addInserting('ville', ':ville');
 			}
 			else {
 			
-				$mess = [ "contenu" => 'ERREUR INSERTION : '.$this->db->getErrMessage() ,    "type" => 'danger',];
+
+				$this->cx->getMessageErr('Cvtech->getCandidat: '.$db->getErrMessage().'  '.$db->q);
+			
+				$mess = [ "contenu" => 'ERREUR INSERTION : '  ,    "type" => 'danger',];
 				
 			}
 			return $mess ;
@@ -167,7 +189,13 @@ $this->db->addInserting('ville', ':ville');
 			$this->db->addParamToBind('id', $this->num );
 	
 				
-			if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+			if (!$this->db->select())
+			{  
+				$this->cx->getMessageErr('Cvtech->getPostuler: '.$db->getErrMessage().'  '.$db->q);
+				return '';
+			
+			
+			}
 				else {  $this->rows = $this->db->getNextRow();   return $this->rows ;}
 			}		 
 			 

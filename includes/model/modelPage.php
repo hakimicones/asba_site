@@ -19,7 +19,13 @@ class modelPage {
 		$this->db->addParamToBind('id', $src );
 		
 		
-		if (!$this->db->select()){  echo 'ERREUR->Elements: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		if (!$this->db->select())
+		
+		{  
+			$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+		
+		}
 			else {   $this->rows = $this->db->getNextRow(); }
 			  
 		return $this->rows ; 
@@ -39,7 +45,13 @@ class modelPage {
 	 $db->addWhere('publier = 1  ');
 	 
 	 
-		if (!$db->select()) { echo 'ERREUR: Pages '.$db->getErrMessage().'<br><br>'; }
+		if (!$db->select()) 
+		{ 
+			
+			$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+		
+		}
 				else { 
 				 
 					 $page = $db->getNextRow() ;
@@ -58,7 +70,12 @@ class modelPage {
 	 $db->addWhere('id_langue =  '."'".ucfirst($lg)."'" );
 	 //$db->addParamToBind('id_langue', ); 
 	 
-	 			if (!$db->select()) { echo 'ERREUR: Pages '.$db->getErrMessage().'<br><br>'; }
+	 			if (!$db->select()) { 
+					
+					$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+					return ''; 
+				
+				}
 				else { 
 				 	
 					 $p = $db->getNextRow() ;
@@ -116,7 +133,8 @@ class modelPage {
         }
         else {
 		
-			echo 'ERREUR INSERTION STATISTIQUE : '.$this->db->getErrMessage()  ;
+			$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
             
         }
 			

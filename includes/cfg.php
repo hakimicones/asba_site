@@ -20,6 +20,18 @@ $this->cfg = new config;
 
 }
 
+
+public function getMessageErr($erreur) 
+{
+
+	$h = fopen('sql_error.log','a');
+	$err = date('d-m-Y  H:i').' '.$erreur;
+	fwrite($h, $err);
+	fclose($h);
+
+
+}
+
 public function con() {
 
 	$this->getConfig();

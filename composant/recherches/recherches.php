@@ -37,7 +37,7 @@ class recherches {
  
  public  function display() {
 
- 	 
+ 	
      
  	$this->model   	=  new recherchesModel($this);
 

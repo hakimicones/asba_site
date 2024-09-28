@@ -13,19 +13,22 @@ class modelProduits {
 	}
 	
 	public function getList($search) {
-		
-		
-		
+			
 		$this->db->resetSelect();
 		$this->db->addSelected('* ','' );
 		
 		$this->db->addFrom('is_product'); 
 		
-		 $this->db->addWhere(' `publier` = 1');
+	 	$this->db->addWhere(' `publier` = 1');
 		$this->db->addOrderBy('ordre'); 
 		
 		 
-		 if (!$this->db->select()){  echo 'ERREUR->LISTE: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select())
+		 {  
+			$this->cx->getMessageErr('Produits->getList: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+
+		 }
         else {    $rows =  $this->db->getAllRows();}
 		
 	  return $rows;
@@ -41,10 +44,13 @@ class modelProduits {
 		$this->db->addFrom('is_product'); 
 		$this->db->addWhere(' id = :id');
 		$this->db->addParamToBind('id', $this->id );
-		
-
  
-		 if (!$this->db->select()){  echo 'ERREUR->DETAILS: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select())
+		 {  
+		
+			$this->cx->getMessageErr('Produits->getDetail: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+		}
         else {    $row  =   $this->db->getNextRow(); }
 		
 	  return $row ;
@@ -69,7 +75,12 @@ class modelProduits {
 
 		$this->db->addWhere('c.id_appli =8');
 		
-  	if (!$this->db->select()){  echo 'ERREUR->DESCRIPTIONS TABS: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+  	if (!$this->db->select())
+	{  
+		$this->cx->getMessageErr('Produits->getTabsContent: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+
+	  }
         else {    $row  =  $this->db->getAllRows(); }
 		//echo str_replace(":lg","'".$this->lg."'",$this->db->q); 
 		return $row ;
@@ -85,7 +96,11 @@ class modelProduits {
 		$this->db->addFrom('is_product'); 
 		$this->db->addWhere(' id IN ( '.$lien.'  )' );
 		 
-	 if (!$this->db->select()){  echo 'ERREUR->SIMILAIRES: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+	 if (!$this->db->select()){  
+		
+		$this->cx->getMessageErr('Produits->getSim: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+	  }
         else {  $row  =   $this->db->getAllRows();   }
 		
 	  return $row ; } else {

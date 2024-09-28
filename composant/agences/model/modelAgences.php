@@ -26,7 +26,13 @@ class modelAgences {
 		$s = "'%".$search."%'"; 
 		$this->db->addWhere(  'libelle_'.$this->lg.' Like '.$s.'  OR  `directeur`  Like '.$s.' OR  `adresse_'.$this->lg .'`   Like '.$s.'');
 		 }
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			
+			$this->cx->getMessageErr('ERREUR->getData: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+		
+		
+		}
         else {  $rows =  $this->db->getAllRows();}
 		
 	  return $rows;

@@ -6,38 +6,52 @@
         public $obj = array()  ;
         private $lg;
         private $idp; 
-        public function __construct($c ,$pos , $lg , $id ) {
-        $this->obj = new stdClass;
-        $this->cx = $c ;
-        $this->position = $pos ;
-        $this->lg = $lg ;
-        $this->idp = $id;
+
+
+
+public function __construct($c ,$pos , $lg , $id ) {
+
+       $this->obj = new stdClass;
+       $this->cx = $c ;
+       $this->position = $pos ;
+       $this->lg = $lg ;
+       $this->idp = $id;
        $this->detect        = new Mobile_Detect;
- }
+
+}
  
  public function getModel() {}
  
- public function getModules() {
+ public function getModules() 
+ 
+ {
 
- $db =  $this->cx->db ;	
- $db->resetSelect(); 
- $db->addSelected('*', '');
- $db->addFrom('is_modules as a');
- $db->addFrom('is_modules_pages as b');
- $db->addWhere("a.id = b.id_module  ");
- $db->addWhere("position =  :pos");
- $db->addWhere('b.id_page = :idp');  
- $db->addWhere('a.publier = 1'); 
+       $db =  $this->cx->db ;	
+       $db->resetSelect(); 
+       $db->addSelected('*', '');
+       $db->addFrom('is_modules as a');
+       $db->addFrom('is_modules_pages as b');
+       $db->addWhere("a.id = b.id_module  ");
+       $db->addWhere("position =  :pos");
+       $db->addWhere('b.id_page = :idp');  
+       $db->addWhere('a.publier = 1'); 
+       
+       $db->addParamToBind('pos', $this->position ); 
+       $db->addParamToBind('idp', $this->idp );  
  
- $db->addParamToBind('pos', $this->position ); 
- $db->addParamToBind('idp', $this->idp );  
+       $this->obj->url = '';
  
- $this->obj->url = '';
- 
- if (!$db->select()){echo $db->q;  echo 'ERREUR->Module: '.$db->getErrMessage().'<br><br>';  return '';  }
-        else {    
+       if (!$db->select())
+              {
+                     $this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+                     return '';  
+              
+              
+              }
+        else  {    
 		
-		 $result = $db->getAllRows(); 
+	       $result = $db->getAllRows(); 
+
              foreach($result as $page) 
  
 			 {

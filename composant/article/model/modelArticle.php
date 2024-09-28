@@ -22,7 +22,12 @@ class modelArticle {
 		$this->db->addOrderBy('ordre'); 
 		
 		 
-		 if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'; return '';  }
+		 if (!$this->db->select()){  
+			
+			$this->cx->getMessageErr('ERREUR->getData: '.$db->getErrMessage().'  '.$db->q);
+			return ''; 
+		
+		}
         else {  $rows =  $this->db->getNextRow();}
 		
 	  return $rows;
