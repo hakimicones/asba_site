@@ -128,7 +128,7 @@ class viewSimulations {
 			 $param = json_decode( $this->html->param);	 
 			
 			$tag[]  =	'{tva}';
-			$ext[]  =	($param->tva) ? $param->tva : 0 ;;
+			$ext[]  =	(isset($param->tva) &&  $param->tva) ? $param->tva : 0 ;;
 			
 			$tag[]  =	'{liens}';
 			$ext[]  = $this->lg.'/vehicules/list-'.$this->id.'-0.html';
