@@ -116,9 +116,8 @@ private function getSafeInput($key, $default = null)
 			
 			$parent = $m->getParent($this->src);
 			 			
-			$row 	= $this->getStat();
-			$st 	= $m->insertStat($row);
-			
+			//$row 	= $this->getStat();
+			//$st 	= $m->insertStat($row);
 			
 			$this->alias = $page['alias'] ;
 			 		 					 
