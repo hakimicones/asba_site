@@ -51,7 +51,9 @@ class simulations {
 	$tsk = $this->getInput(); 
 	
 	
-     
+    $this->conv  		= $this->model->getConventions() ;
+	$this->param 		= $this->model->getOutilsParams();
+	 
 	$data = '';
 
 	
@@ -63,12 +65,7 @@ class simulations {
  /*
 	 
 	$method = 'get'.ucfirst($tsk);
-	$row	= $this->model->$method ($_POST) ; 
-	
-	
-	 
- 	
- 
+	$row	= $this->model->$method ($_POST) ;  
  
     $this->ariane .='<li>'.$this->title .'</li>';
 	
