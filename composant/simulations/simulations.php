@@ -54,8 +54,7 @@ class simulations {
      
 	$data = '';
 
-	$this->conv  		= $this->model->getConventions() ;
-	$this->param 		= $this->model->getOutilsParams();
+	
 	
     if ( (isset($tsk))    && $tsk!='list' ) {  
 
@@ -69,9 +68,6 @@ class simulations {
 	
 	 
  	
-  	
-	
-	
  
  
     $this->ariane .='<li>'.$this->title .'</li>';
