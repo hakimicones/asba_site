@@ -23,12 +23,11 @@ public function __construct($obj)
 		$url = 'composant/recherches/view/tpl/default.php';
 	  $f = file_get_contents($url) ;
 
-	  $input = $_POST['rech-input'];
+	  $input = (isset($_POST['rech-input'])) ? $_POST['rech-input'] : '';
 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			// Validation et nettoyage des données
-		
-
+	  if ($_SERVER["REQUEST_METHOD"] == "POST") 
+		{
+				
 			// Échapper les caractères spéciaux
 			$input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
 
@@ -37,13 +36,9 @@ public function __construct($obj)
 
 			// Limiter la longueur
 			$input = substr($input, 0, 255);
-
-			 
 			 
 		}
 
- 
- 
 				
 	    $rows   = $this->model->getContenu($input);
 

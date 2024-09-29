@@ -3,11 +3,12 @@
 class modelArticle {
 	public $db  ; 
 	public $lg  ;  
-	public function __construct($db,$lg)
+	public function __construct($c)
 	{
 
-	 $this->db  = $db;
-	 $this->lg	= $lg;
+	 $this->db  = $c->db;
+	 $this->lg	= $c->lg;
+	 $this->cx  = $c->cx;
 	}
 	
 	public function getData($search) {
@@ -24,7 +25,7 @@ class modelArticle {
 		 
 		 if (!$this->db->select()){  
 			
-			$this->cx->getMessageErr('ERREUR->getData: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('ERREUR->getData: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 
 		
 		}

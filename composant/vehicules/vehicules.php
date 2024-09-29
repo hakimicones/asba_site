@@ -27,7 +27,7 @@ class vehicules {
    	
 	$retour = new stdClass ;
 	
-    $model 	= new modelVehicules($this->cx->db ,$this->lg);
+    $model 	= new modelVehicules($this );
     $search ='';
 	if (isset($_POST['search'])) {$search =$_POST['search']; } 
 	

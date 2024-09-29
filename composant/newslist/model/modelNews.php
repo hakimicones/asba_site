@@ -4,12 +4,14 @@ class modelNewslist {
 	public $db  ; 
 	public $lg  ; 
 	public $id ; 
-	public function __construct($db,$obj)
+	public function __construct($c)
 	{
-
-	 $this->db  = $db;
+	 $obj   	= $c->obj;
+	 $this->db  = $c->cx->db;
 	 $this->lg	= $obj->lg;
 	 $this->id 	= $obj->id;
+	 $this->cx  = $c->cx->cx;	
+
 	}
 	
 	public function getData($search) {
@@ -19,7 +21,7 @@ class modelNewslist {
 		$this->db->resetSelect();
 		$this->db->addSelected('* ','' );
 		
-		$this->db->addFrom('is_news'); 
+		$this->db->addFrom('is_news1'); 
 		 $this->db->addWhere(' `publier` = 1');
 		$this->db->addOrderBy('date DESC'); 
 		
@@ -36,7 +38,7 @@ class modelNewslist {
 		 if (!$this->db->select())
 		 {  
 			
-			$this->cx->getMessageErr('Newslist->getData: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Newslist->getData: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return '';
 			 
 		
@@ -58,7 +60,7 @@ class modelNewslist {
 		
 		 if (!$this->db->select()){  
 			
-			$this->cx->getMessageErr('Newslist->getDetail: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Newslist->getDetail: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 	 
 		}
         else {    $row  =   $this->db->getNextRow(); }

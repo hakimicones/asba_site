@@ -10,6 +10,7 @@ class modelProduits {
 	 $this->db  = $db;
 	 $this->lg	= $obj->lg;
 	 $this->id 	= $obj->id;
+	 $this->cx 	= $obj->cx;
 	}
 	
 	public function getList($search) {
@@ -48,7 +49,7 @@ class modelProduits {
 		 if (!$this->db->select())
 		 {  
 		
-			$this->cx->getMessageErr('Produits->getDetail: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Produits->getDetail: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 
 		}
         else {    $row  =   $this->db->getNextRow(); }
@@ -77,7 +78,7 @@ class modelProduits {
 		
   	if (!$this->db->select())
 	{  
-		$this->cx->getMessageErr('Produits->getTabsContent: '.$db->getErrMessage().'  '.$db->q);
+		$this->cx->getMessageErr('Produits->getTabsContent: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 
 
 	  }
@@ -98,7 +99,7 @@ class modelProduits {
 		 
 	 if (!$this->db->select()){  
 		
-		$this->cx->getMessageErr('Produits->getSim: '.$db->getErrMessage().'  '.$db->q);
+		$this->cx->getMessageErr('Produits->getSim: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 
 	  }
         else {  $row  =   $this->db->getAllRows();   }

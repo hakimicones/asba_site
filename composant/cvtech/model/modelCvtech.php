@@ -3,18 +3,18 @@
 class modelCvtech {
 	public $db  ; 
 	public $lg  ;  
-	public function __construct($db,$lg)
+	public function __construct($c)
 	{
 
-	 $this->db  = $db;
-	 $this->lg	= $lg;
-	 $this->num   = (isset($_GET['num']))? (int) $_GET['num']:0;
+		$this->db  = $c->cx->db;
+		$this->lg	= $c->lg;
+		
+		$this->cx  = $c->cx->cx;
+	 	$this->num   = (isset($_GET['num']))? (int) $_GET['num']:0;
 	}
 	
 	public function getData($search) {
-		
-		
-		
+			
 		$this->db->resetSelect();
 		$this->db->addSelected('* ','' );
 		
@@ -27,7 +27,7 @@ class modelCvtech {
 		$this->db->addWhere(  'libelle_'.$this->lg.' Like '.$s.'  OR  `niveau_poste`  Like '.$s.' OR  `niv_etude`   Like '.$s.'');
 		 }
 		 if (!$this->db->select()){  
-			$this->cx->getMessageErr('Cvtech->getData: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Cvtech->getData: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 
 		
 		}
@@ -47,7 +47,7 @@ class modelCvtech {
 		 
 		 if (!$this->db->select()){ 
 			
-			$this->cx->getMessageErr('Cvtech->getTypeContrat: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Cvtech->getTypeContrat: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 	
 		
 		}
@@ -68,7 +68,7 @@ class modelCvtech {
 		 
 		 if (!$this->db->select()){  
 			
-			$this->cx->getMessageErr('Cvtech->getExperience: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Cvtech->getExperience: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 	
 		
 		}
@@ -88,7 +88,7 @@ class modelCvtech {
 		
 		 if (!$this->db->select()){  
 			
-			$this->cx->getMessageErr('Cvtech->getNiveau: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Cvtech->getNiveau: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return '';	
 		
 		}
@@ -165,7 +165,7 @@ $this->db->addInserting('ville', ':ville');
 			else {
 			
 
-				$this->cx->getMessageErr('Cvtech->getCandidat: '.$db->getErrMessage().'  '.$db->q);
+				$this->cx->getMessageErr('Cvtech->getCandidat: '.$this->db->getErrMessage().'  '.$this->db->q);
 			
 				$mess = [ "contenu" => 'ERREUR INSERTION : '  ,    "type" => 'danger',];
 				
@@ -191,7 +191,7 @@ $this->db->addInserting('ville', ':ville');
 				
 			if (!$this->db->select())
 			{  
-				$this->cx->getMessageErr('Cvtech->getPostuler: '.$db->getErrMessage().'  '.$db->q);
+				$this->cx->getMessageErr('Cvtech->getPostuler: '.$this->db->getErrMessage().'  '.$this->db->q);
 				return '';
 			
 			

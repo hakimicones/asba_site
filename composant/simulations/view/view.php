@@ -55,7 +55,7 @@ class viewSimulations {
 			$ext[]  =   $this->getSimul3();
 			
 			$tag[]  =	'{tva}';
-			$ext[]  =	($param->tva) ? $param->tva : 0 ; 
+			$ext[]  =	(isset($param->tva) && $param->tva) ? $param->tva : 0 ;
 			/*
 			$tag[]  =	'{}';
 			$ext[]  =  ;
@@ -92,18 +92,18 @@ class viewSimulations {
 		$ext[]  =	'';
 		
 		$tag[]  =  '{tva}';
-		$ext[]  =  ($param->tva) ? $param->tva : 0 ;		
+		$ext[]  =  (isset($param->tva) && $param->tva) ? $param->tva : 0 ;		
 	 
 		
 		$tag[]  =  '{d_t1}';
 	 
-		$ext[]  =  $param->d_t1 ;
+		$ext[]  =  (isset($param->d_t1) && $param->d_t1) ? $param->d_t1 : 0 ;
 		
 		$tag[]  =  '{d_t2}';
-		$ext[]  =  $param->d_t2 ;
+		$ext[]  =  (isset($param->d_t2) && $param->d_t2) ? $param->d_t2 : 0;
 		
 		$tag[]  =  '{d_t3}';
-		$ext[]  =  $param->d_t3 ;
+		$ext[]  =  (isset($param->d_t3) && $param->d_t3) ? $param->d_t3 : 0 ;
 			
 			
 		$html = str_replace ( $tag ,$ext , $f) ;
@@ -113,7 +113,8 @@ class viewSimulations {
  
  
  }	
- function getSimul1() {
+ function getSimul1() 
+ {
    			$url = 'composant/simulations/view/tpl/form.php'; 
 			$f = file_get_contents($url) ; 
 			
@@ -124,9 +125,7 @@ class viewSimulations {
 			$ext[]  =	$this->getConv();
 			
 			
-			 $param = json_decode( $this->html->param);
-			
-			 
+			 $param = json_decode( $this->html->param);	 
 			
 			$tag[]  =	'{tva}';
 			$ext[]  =	($param->tva) ? $param->tva : 0 ;;
@@ -208,13 +207,14 @@ class viewSimulations {
    
 	   
 	   $se   = '<!-- ajout --><select  class="form-control minimal" id="tauxCharge"  onchange="info()" data-live-search="true" > ';
+    if($this->html->conv) 
+	{
 	   foreach($this->html->conv as $el)   {
 	   
-	   $se .=  '  <option value="'.$el['taux'].'" data-max="'.$el['taux_max'].'">'.addslashes(utf8_decode($el['libelle'])).'</option>';   
-		 
+	   	$se .= '<option value="'.$el['taux'].'" data-max="'.$el['taux_max'].'">'.addslashes(utf8_decode($el['libelle'])).'</option>';    
 	   
 	   }
-	   
+	}
 	   $se .=  '</select><!-- ajout -->';
 	 	 
 		return $se ;

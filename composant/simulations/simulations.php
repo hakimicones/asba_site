@@ -26,7 +26,7 @@ class simulations {
 		 $this->obj->lg = strtolower($c->lg);
 		 $this->obj->id = $c->id;
 		 $this->ariane	= $c->ariane ;
-		 $this->model 				= new modelsimulations($this->cx->db ,$this->obj);
+		 $this->model 				= new modelsimulations($this );
 		 
 		 if (isset( $_GET['num'])) { $this->num = (int) $_GET['num']; }  else {$this->num = 0;}
  
@@ -34,7 +34,7 @@ class simulations {
 	}
 	private function getInput() {
 	
-	$t='List';
+	$t='list';
 	if (  isset($_GET['task']) ) { $t =  $_GET['task'] ;}
 	if (  isset($_POST['task']) ) {$t =  $_POST['task'] ;}
 	
@@ -51,10 +51,15 @@ class simulations {
 	$tsk = $this->getInput(); 
 	
 	
-    $this->model 				= new modelsimulations($this->cx->db ,$this->obj);
- 
+     
+	$data = '';
+
+	$this->conv  		= $this->model->getConventions() ;
+	$this->param 		= $this->model->getOutilsParams();
 	
-    if ( (isset($tsk))    && $tsk!='liste' ) {  
+    if ( (isset($tsk))    && $tsk!='list' ) {  
+
+		 
 
  /*
 	 
@@ -63,8 +68,7 @@ class simulations {
 	
 	
 	 
- 	$this->conv  		= $this->model->getConventions() ;
-	$this->param 		= $this->model->getOutilsParams();
+ 	
   	
 	
 	
@@ -86,28 +90,22 @@ class simulations {
 	if (isset($_POST['search'])) {$search =$_POST['search']; }  
 	
 	
-	$row				= $this->model->getData($search);
-	  
-	 
-	$view  = new viewsimulations($row,$this->obj);
-	$data  = $view->display(); 
-	$ariane 	= $this->ariane ;
+		$row	= $this->model->getList($search);
+	   
+		$view  = new viewsimulations($row,$this);
+		$data  = $view->getList(); 
+		$ariane 	= $this->ariane ;
+
 	}
+			
+		$retour = new stdClass ;
+		$retour->data 		= $data; 
+		$retour->ariane		= $ariane;	
+		
+		$retour->titre		= $this->titre;
+		
+		return $retour ;
 	
-	
-	
-	$retour = new stdClass ;
-	$retour->data 		= $data; 
-	$retour->ariane		= $ariane;
-	
-	
-	
-	
-	
-	$retour->titre		= $this->titre;
-	
-	return $retour ;
-   
    }
   	
 	

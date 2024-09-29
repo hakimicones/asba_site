@@ -14,6 +14,7 @@
 			 
 			$this->db    		= $c->cx->db;
 			$this->lg           = $c->cx->lg; 
+			$this->cx           = $c->cx; 
 			 
 			 
 		}

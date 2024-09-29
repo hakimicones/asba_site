@@ -4,14 +4,20 @@ class modelsimulations {
 
 public $db  ; 
 	public $lg  ;  
-	public function __construct($db,$lg)
+	public function __construct($c)
 	{
 
-	 $this->db  = $db;
-	 $this->lg	= $lg;
+		$this->db  = $c->cx->db;
+		$this->lg	= $c->lg;
+		$this->cx  = $c->cx->cx;
+
+
+
 	 if ( isset($_GET['id']) )   { $this->id = (int)  $_GET['id']; }  
 	 if ( isset($_GET['num']) )   { $this->num = (int) $_GET['num']; }
 	}
+
+
 public function getList($search) {
 
        $this->db->resetSelect();
@@ -47,7 +53,9 @@ function getSimulation() {
    $this->db->addParamToBind('id',  $this->num );
 			
 			
-    if (!$this->db->select()){  echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.  $this->db->q;  return '';  }
+    if (!$this->db->select()){  
+		
+		echo 'ERREUR->Module: '.$this->db->getErrMessage().'<br><br>'.  $this->db->q;  return '';  }
         else {  $rows =   $this->db->getNextRow();   }
 		
 	  return $rows;

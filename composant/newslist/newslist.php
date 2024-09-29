@@ -51,7 +51,7 @@ class newslist {
 	$tsk = $this->getInput(); 
 	
 	
-    $model 				= new modelNewslist($this->cx->db ,$this->obj);
+    $model 				= new modelNewslist($this);
 	
 	if (!in_array($tsk,  $this->task_List)) {
 	

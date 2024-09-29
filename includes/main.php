@@ -24,6 +24,8 @@ class main {
 	public $title="";
 	public $style_p;
 
+	public $alias;
+
 	public $affTitle;
 	public $canonical;
 	public $affModal ;    // Si PopUP a l'ouverture
@@ -104,7 +106,7 @@ private function getSafeInput($key, $default = null)
 			
 		//*******	
 			
-			$m		= new modelPage($db);
+			$m		= new modelPage($db, $this->cx);
 			
 			if ($this->id==0 && isset( $this->lg))  { $this->id = $m->getIdVedette($this->lg) ; }
 			
@@ -113,8 +115,7 @@ private function getSafeInput($key, $default = null)
 			$cl 	= $m->addClick($this->id);
 			
 			$parent = $m->getParent($this->src);
-			 
-			
+			 			
 			$row 	= $this->getStat();
 			$st 	= $m->insertStat($row);
 			
@@ -125,9 +126,7 @@ private function getSafeInput($key, $default = null)
 					  
 			 $this->param = json_decode( $page['param']) ;
 
-
-		  				 
-		//  
+  
 			 if ($page['vedette']) { $this->ispage =''; $this->style_p='style="display:none;"';  $this->canonical = '<link rel="canonical" href="'.$this->lg.'/accueil.html" />'; } 
 			 else { 
 

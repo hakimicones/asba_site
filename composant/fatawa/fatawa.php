@@ -24,7 +24,7 @@ class fatawa {
    
    public function display() {
    
-   $model 				= new modelFatawa ($this->cx->db ,$this->lg);
+   $model 				= new modelFatawa ($this );
     
 	
 	$task =   (isset($_POST['task']))?$_POST['task']:'';

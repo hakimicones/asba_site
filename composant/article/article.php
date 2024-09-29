@@ -24,7 +24,7 @@ class article {
     $search ='';
 	if (isset($_POST['search'])) {$search =$_POST['search']; }  
 	
-	$model 	= new modelArticle($this->cx->db ,$this->lg);
+	$model 	= new modelArticle($this );
 	$row	= $model->getData($search);
 	
 	

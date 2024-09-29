@@ -3,13 +3,16 @@
 class modelFatawa {
 	public $db  ; 
 	public $lg  ;  
-	public function __construct($db,$lg)
+	public function __construct($c)
 	{
 
-	 $this->db  = $db;
-	 $this->lg	= $lg;
-	 $this->num   = (isset($_GET['num']))? (int) $_GET['num']:0;
-	 $this->c  = (isset($_POST['cat']))? $_POST['cat']:0;
+		$this->db  = $c->cx->db;
+		$this->lg	= $c->lg;
+		
+		$this->cx  = $c->cx->cx;
+
+		$this->num   = (isset($_GET['num']))? (int) $_GET['num']:0;
+		$this->c  = (isset($_POST['cat']))? $_POST['cat']:0;
 	   
 	}
 	
@@ -41,7 +44,7 @@ class modelFatawa {
 		 }
 		 if (!$this->db->select()){ 
 			
-			$this->cx->getMessageErr('Fatawa->getData: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Fatawa->getData: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 	
 		
 		
@@ -65,7 +68,7 @@ class modelFatawa {
 		
 		 if (!$this->db->select()){  
 			
-			$this->cx->getMessageErr('Fatawa->getCat: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('Fatawa->getCat: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 	
 		
 		

@@ -26,7 +26,7 @@ class agences {
     $search ='';
 	if (isset($_POST['search'])) {$search =$_POST['search']; }  
 	
-	$model 	= new modelAgences($this->cx->db ,$this->lg);
+	$model 	= new modelAgences($this );
 	$row	= $model->getData($search);
 	
 	

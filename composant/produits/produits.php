@@ -26,7 +26,9 @@ class produits {
 		 $this->ariane		 	=  $c->ariane ;
  		 $this->obj->page_id 	=  $c->id ;
  		 $this->obj->desc    	= '';
-		 $this->obj->detect = $c->detect; 		 
+		 $this->obj->detect = $c->detect; 
+
+		 $this->obj->cx    	= 	$c->cx;	 
 		 
 	}
 	private function getInput() {

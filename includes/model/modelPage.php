@@ -4,10 +4,11 @@ class modelPage {
 	public $param;
 	public $ispage;
 
-	public function __construct($c)
+	public function __construct($c, $cx)
 	{
 	  
 	 $this->db    = $c;
+	 $this->cx    = $cx;
 	
 	}
     public function getParent($src) {
@@ -22,7 +23,7 @@ class modelPage {
 		if (!$this->db->select())
 		
 		{  
-			$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+			$this->cx->getMessageErr('ERREUR->Module: '.$this->db->getErrMessage().'  '.$this->db->q);
 			return ''; 
 		
 		}

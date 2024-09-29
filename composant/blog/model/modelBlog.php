@@ -3,11 +3,13 @@
 class modelBlog {
 	public $db  ; 
 	public $lg  ;  
-	public function __construct($db,$lg)
+	public function __construct($c)
 	{
 
-	 $this->db  = $db;
-	 $this->lg	= $lg;
+	 $this->cx  = $c->cx->cx;
+	 $this->db  = $this->cx->db;
+	 $this->lg	= $c->lg;
+
 	 $this->num   = (isset($_GET['num']))? (int) $_GET['num']:0;
 	}
 	
@@ -38,7 +40,7 @@ class modelBlog {
 		 }
 		 if (!$this->db->select())
 		 	{  
-				$this->cx->getMessageErr('ERREUR->getData: '.$db->getErrMessage().'  '.$db->q);
+				$this->cx->getMessageErr('ERREUR->getData: '.$this->db->getErrMessage().'  '.$this->db->q);
 				return ''; 
 				  
 		 	} else {      

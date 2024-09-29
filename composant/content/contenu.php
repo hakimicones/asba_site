@@ -53,7 +53,7 @@ public function getData($id,$cx,$ariane)
 	
 	  if (!$db->select()){ 
 		
-		$this->cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
+		$cx->getMessageErr('ERREUR->Module: '.$db->getErrMessage().'  '.$db->q);
 		return ''; 
 	
 	

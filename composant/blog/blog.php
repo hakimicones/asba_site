@@ -23,6 +23,8 @@ class blog {
 		 $this->obj->type 	= array();
 		 $this->ariane	  	=  $c->ariane ;
 		 $this->obj->detect = $c->detect;
+
+		 
 		 
 		 
 		// $this->obj->format = array();
@@ -37,7 +39,7 @@ class blog {
    
    $retour = new stdClass ;
    
-   $model 				= new modelBlog ($this->cx->db ,$this->lg);
+   $model 				= new modelBlog ($this);
    
    
  

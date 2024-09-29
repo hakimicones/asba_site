@@ -29,7 +29,7 @@ class cvtech {
    {
    $retour = new stdClass ;
    
-   $model 				= new modelCvtech($this->cx->db ,$this->lg);
+   $model 				= new modelCvtech($this );
     
 	
 	$task =   (isset($_POST['task']))?$_POST['task']:'';

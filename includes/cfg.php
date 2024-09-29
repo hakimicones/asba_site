@@ -40,8 +40,9 @@ public function con() {
 	{ 	
 	  	
 	
-	 $this->db  = new Db($this->cfg->dbname, $this->cfg->host, $this->cfg->user, $this->cfg->pass);
-	$this->db->select("mysql_set_charset( 'utf8' );");
+	$this->db  = new Db($this->cfg->dbname, $this->cfg->host, $this->cfg->user, $this->cfg->pass);
+	//$this->db->select("mysql_set_charset( 'utf8' );");
+
 	}
 	
 	

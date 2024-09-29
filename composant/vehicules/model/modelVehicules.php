@@ -3,11 +3,14 @@
 class modelVehicules {
 	public $db  ; 
 	public $lg  ;  
-	public function __construct($db,$lg)
+	public function __construct($c)
 	{
 
-	 $this->db  = $db;
-	 $this->lg	= $lg;
+		$this->cx  = $c->cx->cx;
+		$this->db  = $this->cx->db;
+		$this->lg	= $c->lg;
+
+
 	 if ( isset($_GET['id']) )   { $this->id = (int)  $_GET['id']; }  
 	 if ( isset($_GET['num']) )   { $this->num = (int) $_GET['num']; }
 	}

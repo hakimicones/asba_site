@@ -41,7 +41,7 @@ class modelReclamation {
             $msgtype='success'; 
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage();
+            $msg= 'ERROR: BD getinscription';
                $msgtype='danger'; 
         }
 	$retour = new stdClass ;
@@ -140,7 +140,7 @@ $id=0;
         
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage()."<br>".$this->db->q;
+            $msg= 'ERROR: getreclamation' ;
             $msgtype='danger';
         }
 
@@ -196,7 +196,7 @@ $id=0;
             $bcTicket =  $this->getBase($data);
         }
         else {
-            $msg= 'ERREUR INSERTION TICKET: '. $this->db->getErrMessage()."   ".$user_id;
+            $msg= 'ERREUR INSERTION TICKET:getreclamationenrg ' ;
                $msgtype='danger'; 
         }
     $retour = new stdClass ;
@@ -241,7 +241,7 @@ public function getBase($data) {
             return $result;
         }
         else {
-             echo   'ERREUR INSERTION TICKET: '. $this->db->getErrMessage(). $this->db->q;
+             echo   'ERREUR INSERTION  : getBase' ;
 
              return false;
         }
@@ -281,7 +281,7 @@ public function getTicketBase($data) {
             return $result;
         }
         else {
-             echo   'ERREUR INSERTION TICKET: '. $this->db->getErrMessage(). $this->db->q;
+             echo   'ERREUR INSERTION TICKET: getTicketBase' ;
 
              return false;
         }
@@ -308,7 +308,7 @@ public function gettype() {
         
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage();
+            $msg= 'ERROR: gettype' ;
             $msgtype='danger';
         }
         $retour = new stdClass ;
@@ -337,7 +337,7 @@ public function getdepartments() {
 
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage();
+            $msg= 'ERROR: getdepartments' ;
             $msgtype='danger';
         }
         $retour = new stdClass ;
@@ -364,7 +364,7 @@ public function gethistory() {
 
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage();
+            $msg= 'ERROR: gethistory' ;
             $msgtype='danger';
         }
         $retour = new stdClass ;
@@ -416,7 +416,7 @@ if ($exec) {
 
           echo 0 ; 
                 
-              $retour->contenu    = 'ERREUR MODIFICATION vehicule : '.$this->db->getErrMessage().$this->db->q;  
+              $retour->contenu    = 'ERREUR MODIFICATION  :validation ';  
               $retour->type       =  'danger' ; 
 
         }
@@ -460,7 +460,7 @@ public function gettickets($data) {
         
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage();
+            $msg= 'ERROR: gettickets' ;
             $msgtype='danger';
         }
         $retour = new stdClass ;
@@ -494,7 +494,7 @@ public function getcomment($data,$id) {
         
         }
         else {
-            $msg= 'ERROR: '. $this->db->getErrMessage();
+            $msg= 'ERROR: getcomment';
             $msgtype='danger';
         }
         $retour = new stdClass ;
