@@ -9,15 +9,9 @@
 							 
 							 var data = ajax_send(donnees,"#sous-categories"); 
 							 
-			
-                                              
-
-
-
+							 
 							 
 					});
-
-                
  
 function search() {
 	

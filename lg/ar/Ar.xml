@@ -1,10 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-  <variables>
+ <variables>
 	<var name="{Support Client}" trad="خدمة العملاء" />
 	<var name="{avis}" trad=" رأيكم يهمنا " />
 	<var name="{news}" trad="أخر الأخبار" />
-	<var name="{nom}" trad=" اسمك" />
-	<var name="{prenom}" trad=" لقبك" />
+	
+
+	<var name="{prenom}" trad="ادخل اسمك" />
+	<var name="{nom}" trad=" لقبك" />
+
+
+	<var name="{prenom_latin}" trad="اسمك   بالحرف اللاتيني  "/>
+	<var name="{nom_latin}" trad="لقبك  بالحرف اللاتيني"/>
+
+
+
 	<var name="{nomprenom}" trad="اسمك و لقبك" />
 	<var name="{adresse}" trad="العنوان" />
 	<var name="{ville}" trad="المدينة" />
@@ -17,10 +26,11 @@
 	<var name="{sex}" trad="انا" />
 	<var name="{situation}" trad="الحالة المدنية" />
  	<var name="{postuler}" trad="ترشح" />
+	<var name="{Nombre de postes}" trad="عدد المناصب"  />
 
-	<var name="{upload}" trad="تحميل" />
 
-	<var name="{cv}" trad="السيرة الذاتية" />
+
+
  
 	<var name="{dern_poste}" trad="أخر منصب" />
 	<var name="{ce_que_tu_veut}" trad="ما تريد قوله" />
@@ -83,7 +93,6 @@
 	<var name="|Showers|" trad="ماطر" />
 	<var name="{prix bien}" trad="سعر العقار" /> 
 	<var name="{prix auto}" trad="السيارة" />
-	<var name="{moto}" trad="الدراجة النارية" /> 
 	<var name="{marque}" trad="العلامة" />
 	 
 	<var name="{marge}" trad="هامش ربح" />
@@ -106,7 +115,7 @@
 	<var name="{financement dar al salam non epargnant}" trad="	عملاء دون توطين الراتب" />
 	<var name="{montant a financer }" trad="التمويل" />	
 	<var name="{recherche}" trad="بحث" />	
-	<var name="{add_cv_success}" trad="لقد تم بعث طلب الترشح" />
+	<var name="{add_cv_success}" trad="لقد تم ارسال طلب ترشحكم بنجاح" />
 	<var name="{nous_contacterons}" trad="سوف نتصل بك لاحقا" />
 	<var name="{merci}" trad="شكرا لك" /> 
 	<var name="{desole}" trad="عذرا" /> 
@@ -157,11 +166,6 @@
 	<var name="{rejoinez la news letter}" trad="انضم إلى النشرةالالكترونية  " /> 
     
     <var name="{categorie}" trad="اختر التبويب" />
-	<var name="{toutes categories}" trad="جميع المجالات" />
-	<var name="{branches}" trad="الفروع" />
-	<var name="{sous-categorie}" trad="كل الأصناف" />
-	 
-	
 	<var name="{fatawa}" trad="فتاوي الهيئة" />
 	<var name="{num_fatwa}" trad="اجتماع رقم: " />
 	 
@@ -247,6 +251,7 @@
 	<var name="{msg-service}" trad="مصرف السلام الجزائر دائما في خدمتكم" /> 
 	
 	 <var name="{motos}" trad="الدراجات نارية" /> 
+	 <var name="{moto}" trad="الدراجة النارية" /> 
 	 	  <var name="{choisir fatawa}" trad="اختـر التبویـب" />
 	  <var name="{choix_region}" trad="اختر فرعك حسب المنطقة" />
 	  <var name="{jointe}" trad="المرفقــات" /> 
@@ -266,7 +271,7 @@
 		  <var name="{dix}" trad="عشرة" />
 		  <var name="{Combien font}" trad="كم يساوي" />
 		  <var name="{?}" trad="؟" />
-		  <var name="{votre CV a été envoyé}" trad="تم إرسال سيرتك الذاتية" />
+		  <var name="{votre CV a été envoyé}" trad="لقد تم ارسال طلب ترشحكم بنجاح" />
 		  
 		   <var name="{pages}" trad="الصفحات" />
 		  <var name="{fatawa1}" trad="فتاوى" />
@@ -274,12 +279,17 @@
 		  <var name="{not-found}" trad="لم يتم العثور على نتائج !!!" />
 		  
 		    <var name="{sujet-recherche}" trad="مصطلح البحث" />
-<var name="{empty filed}" trad="يجب عليك استكمال المعلومات المطلوبة" />
-			
 	
+		  <var name="{enregistrer}" trad="تسجيل" />
+
+		  <var name="{sous-categorie}" trad="كل الأصناف" />
+<var name="{toutes categories}" trad="جميع المجالات" />
+		  
 		  <var name="" trad="" />
-		  <var name="" trad="" />
+
+		  <var name="{upload}" trad="تحميل" />
+		  <var name="{cv}" trad="السيرة الذاتية" />
 		  
 		  
 	 
- </variables>
+ </variables> 

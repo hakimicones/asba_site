@@ -1,13 +1,15 @@
 <?php 
 include_once('composant/cvtech/model/modelCvtech.php');
 include_once('composant/cvtech/view/viewCvtech.php');	 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 	
 class cvtech { 
 	public $cx;
 	public $db ;
 	public $obj;	
-	
-	private $task_List = array('list','Tabs','Faq','Blog','');
  
    public function __construct($c)
 	{
@@ -20,34 +22,19 @@ class cvtech {
 		 $this->obj->id 	= $c->id;
 		 $this->obj->type 	= array();
 		 $this->ariane	  	=  $c->ariane ;
+		 $this->db 			= $c->db ;
 		// $this->obj->format = array();
 		 
 	}
    
-   public function display() 
+   public function display() {
    
-   {
-   $retour = new stdClass ;
-   
-   $model 				= new modelCvtech($this );
+   $model 				= new modelCvtech( $this );
     
 	
 	$task =   (isset($_POST['task']))?$_POST['task']:'';
 	 
 	if ( empty($task) && isset($_GET['task'])) { $task = $_GET['task'] ;  }
-	
-	
-	
-		if (!in_array($task,  $this->task_List)) {
-	
-		$retour->data 		=   '<div class="container"><div class="alert alert-danger">La  Tache '.$task.' inconnue </div></div>'; 
-		 
-		$retour->ariane 	= $this->remplace_ariane(); 
-		$retour->titre		= 'Page inconnue';
-		
-		return $retour ;
-         
-    }
 	
     if  (!empty($task) && $task!='list' ) {  
 	
@@ -75,20 +62,27 @@ class cvtech {
 	
 	} else {
     $search ='';
-	if (isset($_POST['search'])) {$search =$_POST['search']; }  
+	 
+	
+	$search =   (isset($_POST )) ? $_POST : null;   
 	
 	$ariane 	= $this->ariane."<li>{cvtech}</li>" ;
 	$row				= $model->getData($search);
-	$this->obj->type 	= $model->getTypeContrat();
- 	
+	/*
 	
+	$this->obj->type 	= $model->getTypeContrat();	
 	$this->obj->format = $model->getNiveau() ;
 	$this->obj->exper   = $model->getExperience(); 
+	
+	*/
+	
+	 $this->obj->categories  = $model->getCatégories(); 
+	 
 	 
 	$view  = new viewCvtech($row,$this->obj);
 	$data  = $view->display(); }
 	
-	 
+	$retour = new stdClass ;
 	$retour->data 		= $data; 
 	
 	$retour->ariane 	= $ariane;

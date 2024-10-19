@@ -1,5 +1,7 @@
 <?php 
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 class viewCvtech {
     public $rows ;
 	public $lg;
@@ -7,15 +9,23 @@ class viewCvtech {
 	public $type;
 	public $format;
 	public $exper;
+	
 	public function __construct($rows, $obj)
 		{
 			 $this->rows	= $rows;
 			 $this->lg		= $obj->lg; 
 			 $this->id		= $obj->id; 
-			 $this->type	= $obj->type;
-			 $this->format	= $obj->format;
-			 $this->exper	= $obj->exper;
+			 
+			 
+			 $this->type		=  (isset($obj->type))  ?   $obj->type  : null ;
+			 $this->format		= (isset($obj->format)) ?  $obj->format : null ;
+			 $this->exper		= (isset($obj->exper))  ? $obj->exper   : null ;
+			 $this->categories 	= (isset($obj->categories))  ? $obj->categories : null ;
+			 
+			 
 		}
+		
+		
 		
     public function display() { 
 	$modal = '';
@@ -27,21 +37,27 @@ class viewCvtech {
 		        <div class="row">';
 			//href="javascript:;" data-toggle="modal" data-target="#form_'.$row['id'].'"	
 				
-		$l1   ='<div class="col-sm-4 map-img">  <a href="'.$this->lg.'/cvtech/postuler-'.$this->id.'-'.$row['id'].'" >   
+		$l1   ='<div class="col-sm-2  ">  <a href="'.$this->lg.'/cvtech/postuler-'.$this->id.'-'.$row['id'].'" class="btn-cv" >   
 				 <img src="images/candidat_'.$this->lg.'.png" height="75" width="75" /> </a> </div>  ';
 		
-		$l2   =	 '<div class="col-sm-8"> <a href="is-cvtech-'.$row['id'].'-candidat.html"> '
-					 . $row['libelle_'.$this->lg] .'  </a>'	
-					 .'<div >'.$row['niveau_poste'] .'</div>'
-					 .'<div >'.$row['niv_etude'].'</div>' 
-					 .'<div >'.$this->getTypeContrat($row['type_contrat']).'</div>' 
-					  
-					 .'<div><a href="javascript:;" id="btn-'.$row['id'].'"  onclick="affDescription(\'pan-'.$row['id'].'\',\'btn-'.$row['id'].'\' )"   class="btn btn-primary"  >
-		               {lire plus} <i class="fa fa-arrow-down" aria-hidden="true"></i> </a></div> '
-				     .'</div>';
-		if ( $this->lg!='ar') { $li .= $l2 . $l1; } else{ $li .= $l1 .$l2; } 
+		$l2   =	 '<div class="col-sm-8"> 
+		              <a href="'.$this->lg.'/cvtech/postuler-'.$this->id.'-'.$row['id'].'"> <h4>'. $row['libelle_'.$this->lg] .'  </h4>  </a>'	
+		       .'<div class="row">'       
+					 .'<div class="col">'.$row['lib_type'] .'</div>'
+					 .'<div class="col" >'.$row['lib_etude'].'</div>' 
+					 .'<div class="col" >'.$row['lib_contrat'].'</div>' 
+					 .'<div class="col" > {Nombre de postes} : '.$row['nbr_postes'] .'  </div>' 
+					 .'</div>'  
+					 .'</div>
+					 <div class="col-sm-2">
+						  <a href="javascript:;" id="btn-'.$row['id'].'" onclick="affDescription( '.$row['id'].'  )" class="btn btn-primary btn-plus">
+						   {lire plus} <i class="fa fa-arrow-down" aria-hidden="true"></i> 
+						  </a>
+					 </div> '
+				     .'';
+		if ( $this->lg!='ar') { $li .= $l1 . $l2; } else{ $li .= $l2 .$l1; } 
 		
-		$li .= 	 '</div><div class="pan-slide" id="pan-'.$row['id'].'"><hr>'.$row['description_' .$this->lg]  .'
+		$li .= 	 '</div><div class="pan-slide collapse" id="pan-'.$row['id'].'"><hr>'.$row['description_' .$this->lg]  .'
 		          <div style="padding-top:20px;"><a href="javascript:;" id="btn-up-'.$row['id'].'"  onclick="cacheDescription( '.$row['id'] .' )"   class="btn btn-primary"  >
 		            {reduire} <i class="fa fa-arrow-up" aria-hidden="true"></i></a></div> </div></li>';
  		 
@@ -49,11 +65,26 @@ class viewCvtech {
 		 
 	 	}
 		
+		$url = 'composant/cvtech/js/script.js'; 
+		$script = file_get_contents($url) ;
 		
-		$data =  '<section id="cvtech"   style="margin-top: 20px;">'
-			.'<div class="container"><form action="'.$this->lg.'/cvtech/list-'.$this->id.'-1.html" method="post">'
-			.$this->getSearchInput()
-			.'<ul class="agences ">'.$li.'</ul></form></div> </section>'; 
+		$messages = (isset($_POST['search'])) ?  '<div class="message ">{recherche} : '.$_POST['search'].'</div> <hr>' : '';
+		$data =  '
+		 
+		<section id="cvtech"   style="margin-top: 20px;">'
+			.'<div class="container">
+					<form id="cvtech-form" action="'.$this->lg.'/cvtech/list-'.$this->id.'-1.html" method="post">
+					   '.$messages
+					   		
+					
+						.$this->getSearchInput()
+						.'<ul class="offres ">'.$li.'</ul>
+						<input type="hidden" id="lg" value="' .$this->lg.'">
+						
+					</form>
+			   </div> 
+			<script> '.$script .'</script>
+	     </section>'; 
 		 
 		return $data;
 	
@@ -74,19 +105,30 @@ class viewCvtech {
 	
 	
 	
-	public function renSelect($r,$n,$ch) {
-	
-	$t_lib = '<div class="form-group"> <select name="'.$n.'" class="modal_form select-pick" 
-			 data-error="'.ucfirst($n).' : Vous devez faire une selection " required>';
-	$t_lib .='<option value="" class="select-1"> '. $ch.'</option>';
+	public function renSelect($r,$n,$ch,$first = true ) 
+	{
+		
+	$t_lib = '
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+	<select class="custom-select select2" aria-label="Default select example" name="'.$n.'" id="'.$n.'">';
+	$t_lib .=($first) ?'<option value=""  class="select-1"> '. $ch.'</option>' : '';
 		foreach ( $r as $t )   { 
 			$t_lib .='<option value="'.$t['id'].'"> '.$t['libelle_'.$this->lg].'</option>';
 		}
-	$t_lib .='<option value="0" class="select-2"> {autres '.  $n .'}</option>';		
-	$t_lib .= '</select>
-			  <input type="text" name="autre_'.$n.'" id="autre_'.$n.'"  placeholder="{autres '.  $n .'}" style="display:none">
-			  <div class="help-block with-errors"></div></div>';	
+		$t_lib .=  '</select> ';	
+	$t_lib .=($first) ?  ' 
+	<script>
+    $(".select2").select2();
+	
+	
+</script>
+	
+	
+	' : '';	
 	return $t_lib ;  
+	
+	
 	}
 	
 	public function renSelect2($r,$n,$ch) {
@@ -107,94 +149,99 @@ class viewCvtech {
 	
 	/******************************/
 	public function getSearchInput() { 
-	$html = '<div ><input type="text"  onBlur="this.form.submit();" class="search_anim" name="search" placeholder="{recherche}..."></div>' ;
+	$html = '<div class="row">
+		    
+			         
+			         <div class="col-4 selectContainer ">
+					 <input type="text"   class="search_anim form-control" name="search" placeholder="{recherche}...">
+ 
+					 </div>
+					 
+					 
+					 <div class="col-3 selectContainer ">'.$this->renSelect($this->categories ,"categories" , "{toutes categories}").'</div>
+					 
+					 <div class="col-3 selectContainer">'.$this->renSelect(array() ,"sous-categories" , "{sous-categorie}").'</div>
+					 
+					 <input type="hidden" name="label" id="label-sous-categorie" value="{sous-categorie}">
+					 <div class="col-2 "> <a href="javascript:search()" class="btn btn-primary" >{recherche} <i class="fa fa-search" aria-hidden="true"></i></a> </div>
+							   
+			</div>' ;
 	return $html;
 	}
 	
 	// Formulaire
 	
 	public function getPostuler() {
+
+
+      
 	
-	$id = (isset($_GET['num']))? (int) $_GET['num']:'0';
-	//print_r($this->rows);
-	 
-	
-	$data  =  '<div class="container"><div class="white-form">';
-	$data .=  '<form class="form_lignes" id="form_cv"  method="post" role="form" data-toggle="validator">
-			  <h3>'.$this->rows['libelle_'.$this->lg]  .'</h3> <hr><div class="form-group">
-			  <input type="text" name="nom" placeholder="{nomprenom}"  data-error="OOPS : Vous devez saisir le Nom et le prenom " required> 	
-			  <div class="help-block with-errors"></div></div>	
-			  <input type="text" name="adresse" placeholder="{adresse}"><div class="row">';
-	$v1    =   '  <div class="col-sm-6"><input type="text" name="ville" placeholder="{ville}"></div>';
-	$v2    =   ' <div class="col-sm-6"> <input type="text" name="wilaya" placeholder="{wilaya}"> </div>';
+	    $id = (isset($_GET['num']))? $_GET['num']:'0';
+
+        $libelle = 
+
+		$url = 'composant/cvtech/view/tpl/form.php'; 
+		$f = file_get_contents($url) ;
 		
-	if ( $this->lg!='ar') { $data .= $v1 .   $v2;  } else{ $data .=  $v2 . $v1 ;  } 	
+		$tag[]  =  '{liste formation}';
+		$ext[]  =  $this->renSelect($this->format ,"formations" , "{formation}",false);	
 		
-	$data .=	'</div> <div class="row"> ';
-	
-	
-	$v1    =   ' <div class="col-sm-6">	<input type="text" name="tel" placeholder="{tel}"></div>';
-	$v2    =   '<div class="col-sm-6"> <input type="text" name="mob" placeholder="{mob}"> </div>';
-	
-	if ( $this->lg!='ar') { $data .= $v1 .   $v2;   } else{ $data .=  $v2 . $v1 ;  } 
-	$data .=	'</div> <div class="form-group"> 
-		         <input type="email" name="email" placeholder="{email}" data-error="OOPS : L\'adresse E-mail est mal saisie ex:nom@domain.com " required>
-				 <div class="help-block with-errors"></div></div> ';
-	$data .=	'<div class="row"> ';	
-	
-	
-	 $v1    ='<div class="col-sm-6"><input type="text" name="nele" placeholder="{nele}"></div>' ; 
-	 $v2    ='<div class="col-sm-6"><input type="text" name="lieu" placeholder="{lieu}"></div>' ; 
-	 
-	 if ( $this->lg!='ar') { $data .= $v1 .   $v2;   } else{ $data .=  $v2 . $v1 ;  } 
-	 // 	= ; $this->format	= $obj->format;
-			 
-	// = $obj->exper;
-	//  <input type="text" name= placeholder="{experience}">
-	
-	$data .=	'</div> <div class="row">';
-	    
-		 $v1    ='<div class="col-sm-6 selectContainer">'.$this->renSelect($this->format,"formations" , "{formation}").'</div> ' ; 
-		 $v2    ='<div class="col-sm-6 selectContainer">'.$this->renSelect($this->exper	,"experience", "{experience}").'</div> ' ; 
+		$tag[]  =  '{liste experience}';
+		$ext[]  =  $this->renSelect($this->exper ,"experience" , "{experience}",false);	
+
+
+		$tag[]  =  '{libelle}';
+		$ext[]  =  (isset($this->rows['libelle_'.$this->lg])) ?  $this->rows['libelle_'.$this->lg] : '';
+
+		$tag[]  =  '{id_offre}';
+		$ext[]  = (isset($this->rows['id'])) ? $this->rows['id'] : 0;
+
+		$tag[]  =  '{text_contenu}';
+		$ext[]  = (isset($this->rows['intro_text'])) ? $this->rows['intro_text'] : '';
+
+
+		$form_latin = '
+				<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="adresse">{nom_latin}</label>
+								<input type="text" class="form-control" name="nom_latin" placeholder="Nom"  required>
+							</div> 
+						</div> 	
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="adresse">{prenom_latin}</label>
+								<input type="text" class="form-control" name="prenom_latin" placeholder="Prenom"  required>
+							</div> 
+						</div> 
+			</div>';
+
+		$tag[]  =  '{nomprenom_latin}';
+		$ext[]  =  ($this->lg =="ar") ?  $form_latin : '';
+
+
+
+
+
+
+
+		
 		 
-	if ( $this->lg!='ar') { $data .= $v1 .   $v2;   } else{ $data .=  $v2 . $v1 ;  } 
-	 
-	$data .=	'</div> <div class="row">';
-	
-	$data .=   '<input type="text" name="dern_poste" placeholder="{dern_poste}" > ';
-		 
-	$data .=	'</div> <div class="row">';
-	 $sit = array(  1  => "{celibataire}", 2    => "{marie}",  3 => "{marie_enfant}",  4 => "{divorce}" , 5 => "{veuf}" );
-	 $sex = array(  1    => "{homme}",  2  => "{femme}"  );	 
-	
-	 $v1    ='<div class="col-sm-6 ">'.$this->renSelect2(  $sex	, "sex","{sex}").'</div> ' ;
-	 $v2    ='<div class="col-sm-6">'.$this->renSelect2(   $sit	,"situation" ,"{situation}" ).'</div> ' ;
-	 
-	 if ( $this->lg!='ar') { $data .= $v1 .   $v2;   } else{ $data .=  $v2 . $v1 ;  } 
-	 
-	 $data .=  '<br><br><br>';
-	 $data .=   '<input type="textarea" name="obs" placeholder="{ce_que_tu_veut}" > ';
-	 $data .=	'<br><br><br><hr></div> <input name="task" type="hidden" value="candidat"><input name="id_offre" type="hidden" value="'.$id.'">
-	 			<button class="btn btn-primary" type = "submit"> {send} </button> 
-				<button class="btn btn-danger" type = "reset">  {effacer} </button>
-	 			</form></div></div>';
-	 $data .= '<script src="librairies/bootstrap/js/bootstrap-select.min.js"></script> ';	
-	 $data .= '<script> $(".select-pick").selectpicker().change(function(e) {  
-	 var id = "autre_"+$(this).attr("name");
-	 if ($(this).val()=="autre") {  
-	 $("#"+id).css(\'display\',\'block\');   } else {
-	 $("#"+id).css(\'display\',\'none\'); }
-	    
-	 
-	 }) </script>    ';			
-				
-       
-	   
-	   return $data ;
+		
+		
+
+
+
+		
+		$data = str_replace ( $tag , $ext , $f) ;
+		
+ 	    			
+	    return $data ;
 	
 	}
 	
-	public function getForm($row) {
+	public function getForm($row) 
+	{
 	 
 	$data  =  '<form class="form_lignes" id="form_cv"  method="post">
 			  <input type="text" name="nom" placeholder="{nomprenom}"> 		
